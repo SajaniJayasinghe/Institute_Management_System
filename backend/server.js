@@ -1,14 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// const cors = require("cors");
+const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
 
 //app middleware
 app.use(bodyParser.json());
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 
@@ -30,9 +30,14 @@ mongoose.connect(URL, {
 const connection = mongoose.connection;
 connection.once("open", () => {
 console.log("Mongodb connection success!!!");
-
 })
+
+// @import routes
+const courseRouter = require("./routes/SS_routes/courses");
+
+//@routes use
+app.use("/course",courseRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
-})
+});
