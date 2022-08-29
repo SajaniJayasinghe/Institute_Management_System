@@ -3,6 +3,9 @@ import axios from 'axios';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
+import Button from '@material-ui/core/Button';
+import DescriptionIcon from '@mui/icons-material/Description';
+import IconButton from '@material-ui/core/IconButton';
 
 export default class CourseDetails extends Component {
     constructor(props){
@@ -58,8 +61,15 @@ render() {
    <div>
      <div className='container'><br/><br/>
        <div align="center">
-          <h3 style={{fontFamily:"times new roman", fontSize:"40px"}}><u><b>All Courses Details</b></u></h3> <br></br>
-            <div className="col-md-3" style={{marginLeft:'970px'}}> 
+        <h3 style={{fontFamily:"times new roman", fontSize:"40px"}}><u><b>COURSES LIST</b></u></h3> <br></br>
+          <div align="right">
+            <Button variant="contained" style={{background: "#8BC0FF", width: 7+"%",color:"BLACK",borderRadius: 20,}}
+                 href="/"  disableElevation type="submit" >CREATE</Button>&nbsp;
+                <IconButton aria-label="delete" size="medium" href='/'>
+                  <DescriptionIcon fontSize="large"  style={{color: "black"}}/>
+                </IconButton>
+              </div>
+            <div className="col-md-3" style={{marginRight:'970px'}}> 
               <input type="text" className="form-control" placeholder="Search Course Name or Course Code " onChange={this.handleSearchArea}/>
                 <br/> 
                   </div>    
@@ -88,7 +98,7 @@ render() {
                             <td>{courses.courseadded_date}</td>
                             <td>
                               <IconButton aria-label="edit" color="primary" size="small"
-                                 href= "">
+                                  href={`/update/${courses._id}`}>
                                 <EditIcon fontSize="small"  style={{color: "black"}} />
                               </IconButton> &nbsp;&nbsp;&nbsp;&nbsp;
 
