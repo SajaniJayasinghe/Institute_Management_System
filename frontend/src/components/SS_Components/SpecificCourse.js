@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import Footer from "../Layouts/footer";
+import AdminNavBar from "../Layouts/AdminNavBar";
 
 export default function SpecificCourse() {
     const [course_name,setcourse_name] = useState("");
@@ -35,48 +37,51 @@ export default function SpecificCourse() {
 
 
   return (
-    <div style={{ backgroundColor:"#ffff" ,height:"1100px"}} >
-      <div align="center" ><br/><br/>
-        <Paper style={{textAlign:"center",borderRadius: 5,width:'1000px',height:'700px',backgroundColor:"#E9F6FD"}}>
-          <br/><br/>
+    <div>
+      <AdminNavBar/>
+        <div style={{ backgroundColor:"#ffff" ,height:"900px"}} >
+           <div align="center" ><br/><br/>
+              <Paper style={{textAlign:"center",borderRadius: 5,width:'1000px',height:'700px',backgroundColor:"#E9F6FD"}}>
+                <br/><br/>
+       
+              <div class="container">
+                 <div class="row">
+              <div class="col-sm">
+
+                   <div style={{display:"flex"}}>
+                     <h2><b>{course_name}</b></h2>
+                    </div>
+
+                   <div style={{display:"fleX" }}>
+                     <img className="activator" id="aimage" src={course_thumbnail} width={350} />
+                    </div><br/>
+         
+                     <div style={{display:"fleX" }}>
+                       <b>{subtitle}</b>
+                     </div>
+
+                     <div style={{display:"fleX" }}>
+                       <b>{lecture_name}</b>
+                     </div><br/>
+         
+                 <Button variant="contained" className="w-10" 
+                  style={{background: "#8BC0FF", width: 35+"%",color:"BLACK",borderRadius: 20,}}
+                    disableElevation  >{course_name}
+                 </Button>
+         
+              </div>
+                   <div class="col-sm">
+                     <div style={{display:"fleX" }}>
+                      <b>{description}</b>
+                     </div>
+                    </div>
    
-        
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-
-          <div style={{display:"flex"}}>
-           <h2><b>{course_name}</b></h2>
-          </div>
-
-          <div style={{display:"fleX" }}>
-           <img className="activator" id="aimage" src={course_thumbnail} width={350} />
-          </div><br/>
-         
-          <div style={{display:"fleX" }}>
-           <b>{subtitle}</b>
-          </div>
-
-          <div style={{display:"fleX" }}>
-           <b>{lecture_name}</b>
-          </div><br/>
-         
-          <Button variant="contained" className="w-10" style={{background: "#8BC0FF", width: 35+"%",color:"BLACK",borderRadius: 20,}}
-            disableElevation  >{course_name}</Button>
-         
-    </div>
-    <div class="col-sm">
-          <div style={{display:"fleX" }}>
-           <b>{description}</b>
-          </div>
-    </div>
-   
-  </div>
-</div>
-
-
-        </Paper>
-      </div>
+                 </div>
+              </div>
+              </Paper>
+           </div><br/><br/>
+      <Footer/>
+        </div>
     </div>
   )
 }

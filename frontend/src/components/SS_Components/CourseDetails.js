@@ -6,6 +6,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
 import DescriptionIcon from '@mui/icons-material/Description';
 import IconButton from '@material-ui/core/IconButton';
+import AdminNavBar from '../Layouts/AdminNavBar';
 
 export default class CourseDetails extends Component {
     constructor(props){
@@ -58,7 +59,7 @@ filterData(courses,searchKey){
     
 render() {
   return (
-   <div>
+   <div> <AdminNavBar/>
      <div className='container'><br/><br/>
        <div align="center">
          <h3 style={{fontFamily:"times new roman", fontSize:"40px"}}><u><b>COURSES LIST</b></u></h3> <br></br>
@@ -71,7 +72,7 @@ render() {
                   <DescriptionIcon fontSize="large"  style={{color: "black"}}/>
                </IconButton>
            </div>
-            
+
             <div className="col-md-3" style={{marginRight:'970px'}}> 
               <input type="text" className="form-control" placeholder="Search Course Name or Course Code " 
                 onChange={this.handleSearchArea}/> <br/> 
@@ -79,13 +80,12 @@ render() {
 
             <table class = "table" >
               <thead> 
-                <tr bgcolor="#083C53" >
+                <tr bgcolor="#083C53">
                   <th ><font color="#fff">No</font></th>
                   <th ><font color="#fff">Course Name</font></th>
                   <th ><font color="#fff">Course Code</font></th>
                   <th ><font color="#fff">Subtitle</font></th>
                   <th ><font color="#fff">Lecture Name</font></th>
-                  <th ><font color="#fff">Description</font></th>
                   <th ><font color="#fff">Courseadded Date</font></th>   
                   <th ><font color="#fff">Action</font></th>
                 </tr>
@@ -99,7 +99,6 @@ render() {
                     <td>{courses.course_code}</td>
                     <td>{courses.subtitle}</td>
                     <td>{courses.lecture_name}</td>
-                    <td>{courses.description}</td>
                     <td>{courses.courseadded_date}</td>
                     <td>
                       <IconButton aria-label="edit" color="primary" size="small"

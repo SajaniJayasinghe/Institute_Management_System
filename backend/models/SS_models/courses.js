@@ -38,7 +38,7 @@ const coursesSchema = new mongoose.Schema({
 
     course_content:{
         type: String,
-        required:true,
+        required:false,
     }
 
 });

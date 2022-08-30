@@ -4,6 +4,9 @@ import axios from "axios";
 import app from "../../FireBase";
 import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
 import Button from '@material-ui/core/Button';
+import Footer from "../Layouts/footer";
+import AdminNavBar from '../Layouts/AdminNavBar';
+
 
 export default function UpdateCourseDetails() {
   const [course_name,setcourse_name] = useState("");
@@ -37,10 +40,10 @@ export default function UpdateCourseDetails() {
     const onUpdate = (e) => {
       e.preventDefault();
 
-      const fileName = new Date().getTime().toString() + course_thumbnail.name;
+      const fileName = new Date().getTime().toString() + course_thumbnail.name +course_content.name ;
       const storage = getStorage(app);
       const storageRef = ref(storage, fileName);
-      const uploadTask = uploadBytesResumable(storageRef, course_thumbnail);
+      const uploadTask = uploadBytesResumable(storageRef, course_thumbnail,course_content);
 
    // Register three observers:
       // 1. 'state_changed' observer, called any time the state changes
@@ -69,8 +72,8 @@ export default function UpdateCourseDetails() {
     () => {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-        getDownloadURL(uploadTask.snapshot.ref).then((course_thumbnail) => {
-        console.log('File available at', course_thumbnail);   
+        getDownloadURL(uploadTask.snapshot.ref).then((course_thumbnail,course_content) => {
+        console.log('File available at', course_thumbnail,course_content);   
 
     const updateCourse = {
       course_name,
@@ -97,10 +100,10 @@ export default function UpdateCourseDetails() {
 }
 
   return (
-       <div>
+       <div><AdminNavBar/>
          <br/><br/>
            <div class="row d-flex align-items-center justify-content-center">
-              <div style={{width: 1000,background: "#F5F5F5",height:575,backgroundSize:"1000px "}}> 
+              <div style={{width: 1000,background: "#F5F5F5",height:620,backgroundSize:"1000px "}}> 
                 <div class="card-body">  
                    <form action="" method="post" name="form"onSubmit={onUpdate}>
                      <div style={{display:'flex'}}>
@@ -167,7 +170,7 @@ export default function UpdateCourseDetails() {
                            <input style={{marginLeft:"20px"}} type="date" class="form-control"  value={courseadded_date}
                             name="courseadded_date" placeholder='Enter Course added Date'
                             onChange={(e) => { setcourseadded_date(e.target.value) }}/><br/><br/> 
-                      </div>
+                      </div><br/>
          
                       <div style={{display:"flex" , alignItems:"center"}}>
                          <div style={{minWidth :"165px",maxWidth:"100px"}} >
@@ -181,9 +184,8 @@ export default function UpdateCourseDetails() {
                          <div style={{minWidth :"165px",maxWidth:"100px"}} >
                             8. Course Content 
                          </div>
-                            <input type="text"  class="form-control" value={course_content}
-                             name="course_content" placeholder='Enter description'
-                             onChange={(e) => { setcourse_content(e.target.value) }}/><br/><br/><br/>
+                            <input type="file"  class="form-control" 
+                             onChange={(e) => setcourse_content(e.target.files[0])} /> <br/><br/><br/>
                       </div> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         
                             <Button variant="contained" className="w-10" style={{background: "#8BC0FF", width: 23+"%",color:"BLACK",borderRadius: 20,}}
@@ -199,7 +201,8 @@ export default function UpdateCourseDetails() {
                    </form>
                 </div>
               </div>
-           </div>
+           </div><br/><br/>
+           <Footer/>
        </div>
   )
 }

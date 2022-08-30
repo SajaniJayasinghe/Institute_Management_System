@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Course from './CoursesPage';
 import Paginat from './paginationComponent';
+import AdminNavBar from '../Layouts/AdminNavBar';
+import Footer from "../Layouts/footer";
 
 const CoursesDisplay = () => {
     const [isLoading, setLoading] = useState(true)
@@ -37,13 +39,13 @@ const CoursesDisplay = () => {
 
  }
      return(
-        <div>   
-           <div style={{ backgroundColor:"#0C090A" ,height:"1400px"}} ><br/><br/>
+        <div><AdminNavBar/>   
+           <div style={{ backgroundColor:"#fff" ,height:"1000px"}} >
               <div className="container" align="center">
                  <div className="row" style={{ paddingTop: 15 }}>
                      {currentPost.map((course) => (
                     <div key={course._id} className="col-lg-3 col-md-6">
-                      <div className="ui link cards"><br/><br/>
+                      <div className="ui link cards"><br/>
                         <Course
                            key={course._id}
                            courseID={course._id}
@@ -61,7 +63,8 @@ const CoursesDisplay = () => {
                          paginate={paginate}/>
                     </div>
               </div>
-           </div>
+           </div><br/>
+   <Footer/>
         </div>
      )
     }

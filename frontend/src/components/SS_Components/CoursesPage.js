@@ -23,11 +23,11 @@ const handleClose = (reason) => {
 
  return (
   <div class="card"  style={{ background: "white",color:"black",}} >
-      <div style={{overflow: 'hidden', height: 280}}>
+      <div style={{overflow: 'hidden', height: 320}}>
         <img src={course_thumbnail} width={330} onClick={CourseHome}/>
       </div>
 
-       <div class="content text-color p-2">
+       <div class="content text-color p-2" style={{backgroundColor:"#DAE7F8"}}>
           <div style={{ fontSize:23,fontWeight:"bold"}} align='left'>
              {course_name.length > 13 ?
           <div >{course_name.substr(0, 14)}...</div> : course_name}  </div>   
