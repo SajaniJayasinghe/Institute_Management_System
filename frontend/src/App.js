@@ -16,13 +16,14 @@ export default class App extends Component {
            <Routes>
             
              {/* Sajani */}
-             <Route path = "/createCourse" element= {<CreateNewCourses/>} exact/>
+             <Route path = "/" element={<HomePage/>}exact/>
+             <Route path = "/createCourse" element= {<CreateNewCourses/>} />
              <Route path = "/courseDetails" element={<CourseDetails/>}/>
              <Route path = "/update/:courseID" element={<UpdateCourseDetails/>}/>
              <Route path = "/specific/:courseID" element={<SpecificCourse/>}/>
              <Route path = "/coursesdisplay" element={<CoursesDisplay/>}/>
              <Route path = "/admindashboard" element={<AdminDashboard/>}/>
-             <Route path = "/" element={<HomePage/>}/>
+            
 
              
              {/* Randy */}
