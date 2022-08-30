@@ -65,7 +65,7 @@ render() {
          <h3 style={{fontFamily:"times new roman", fontSize:"40px"}}><u><b>COURSES LIST</b></u></h3> <br></br>
            <div align="right">
                <Button variant="contained" style={{background: "#8BC0FF", width: 7+"%",color:"BLACK",borderRadius: 20,}}
-                 href="/"  disableElevation type="submit" >CREATE
+                 href="/createCourse"  disableElevation type="submit" >CREATE
                </Button>&nbsp;
                 
                <IconButton aria-label="delete" size="medium" href='/'>
