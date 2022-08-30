@@ -10,23 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
-
     "@emotion/styled": "^11.10.0",
     "@fortawesome/fontawesome-free": "^6.1.2",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material/icon-button": "^14.0.0",
-    "@mui/icons-material": "^5.10.2",
-    "@mui/material": "^5.10.2",
-
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.3",
     "axios": "^0.27.2",
     "file-saver": "^2.0.5",
     "firebase": "^9.9.3",
     "koa": "^2.13.4",
-    "material-icons": "^1.11.10",
+    "material-icons": "^1.11.11",
     "parcel": "^2.7.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",

@@ -30,7 +30,7 @@ export default class App extends Component {
              <Route path = "/specific/:courseID" element={<SpecificCourse/>}/>
              <Route path = "/coursesdisplay" element={<CoursesDisplay/>}/>
              <Route path = "/admindashboard" element={<AdminDashboard/>}/>
-             <Route path = "/" element={<HomePage/>}/>
+             {/* <Route path = "/" element={<HomePage/>}/> */}
 
              
              {/* Randy */}
