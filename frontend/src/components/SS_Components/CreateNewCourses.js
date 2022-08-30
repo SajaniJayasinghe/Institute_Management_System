@@ -75,24 +75,22 @@ export default function CreateNewCourses(){
    );
  }
 
-         return(
-            <div>
-            <br/><br/>
-              <div class="row d-flex align-items-center justify-content-center">
-                  <div style={{width: 1000,background: "#F5F5F5",height:575,backgroundSize:"1000px "}}> 
-                      <div class="card-body">  
-                         <form action="" method="post" name="form" onSubmit={sendData}>
-                             <div style={{display:'flex'}}>
+   return(
+     <div><br/><br/>
+       <div class="row d-flex align-items-center justify-content-center">
+         <div style={{width: 1000,background: "#F5F5F5",height:620,backgroundSize:"1000px "}}> 
+           <div class="card-body">  
+             <form action="" method="post" name="form" onSubmit={sendData}>
+                <div style={{display:'flex'}}>
                                    
-                                    <div class="row g-0" style={{flex:1}}>
-                                      <img src="https:res.cloudinary.com/nibmsa/image/upload/v1661690483/top-banner-with-no-bg-1_vwvnct.webp" style={{objectFit:'cover'}}></img>
-                                         <br/><br/>    
-                                    </div>
+                  <div class="row g-0" style={{flex:1}}>
+                    <img src="https:res.cloudinary.com/nibmsa/image/upload/v1661690483/top-banner-with-no-bg-1_vwvnct.webp" style={{objectFit:'cover'}}></img>
+                    <br/><br/>    
+                  </div>
                  
-                              <div class="col-xl-10" style={{flex:1}}><br/>
-                                   <div class="form-outline mb-2" style={{fontFamily:"times new roman"}}>
-                                      <h3 style={{fontFamily:"times new roman"}}>&emsp;&emsp;
-                                   <b><u>Create&nbsp;New Course</u></b></h3><br/>
+                  <div class="col-xl-10" style={{flex:1}}><br/>
+                    <div class="form-outline mb-2" style={{fontFamily:"times new roman"}}>
+                        <h3 style={{fontFamily:"times new roman"}}>&emsp;&emsp;<b><u>Create&nbsp;New Course</u></b></h3><br/>
                              
                               <div style={{display:"flex" , alignItems:"center"}}>
                                  <div style={{minWidth :"165px",maxWidth:"100px"}}>
@@ -146,39 +144,37 @@ export default function CreateNewCourses(){
                                    <input style={{marginLeft:"20px"}} type="date" class="form-control" 
                                     name="courseadded_date" placeholder='Enter Course added Date'
                                     onChange={(e) => { setcourseadded_date(e.target.value) }}/><br/><br/> 
-                              </div>
+                              </div><br/>
                  
                               <div style={{display:"flex" , alignItems:"center"}}>
                                  <div style={{minWidth :"165px",maxWidth:"100px"}} >
                                     7. Course Thumbnail 
                                  </div>
                                  <input type="file"  class="form-control" onChange={(e) => setcourse_thumbnail(e.target.files[0])} required/>  
-                              </div>
+                              </div><br/>
                  
                               <div style={{display:"flex" , alignItems:"center"}}>
                                  <div style={{minWidth :"165px",maxWidth:"100px"}} >
                                     8. Course Content 
                                  </div>
-                                    <input type="text"  class="form-control" 
-                                     name="course_content" placeholder='Enter description'
-                                     onChange={(e) => { setcourse_content(e.target.value) }}/><br/><br/><br/>
-                              </div> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                
-                                    <Button variant="contained" className="w-10" style={{background: "#8BC0FF", width: 23+"%",color:"BLACK",borderRadius: 20,}}
+                                 <input type="file"  class="form-control" onChange={(e) => setcourse_content(e.target.files[0])} required/>  
+                              </div> <br/>
+                 
+                                    <Button variant="contained" className="w-10" style={{background: "#8BC0FF", width: 23+"%",color:"BLACK",borderRadius: 20}}
                                     disableElevation type="submit" >CREATE</Button>&nbsp; &nbsp; 
                  
-                                   <Button variant="contained" href='/courseDetails' className="w-10" style={{background: "#8BC0FF", width: 23+"%",color:"BLACK",borderRadius: 20,}}
+                                   <Button variant="contained" href='/courseDetails' className="w-10" style={{background: "#8BC0FF", width: 23+"%",color:"BLACK",borderRadius: 20}}
                                     disableElevation type="submit">CANCEL</Button> 
                  
-                                    </div> 
-                                 <br/> <br/>
-                               </div>
-                             </div>
-                           </form>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                    </div> <br/> <br/>
+                  </div>
+                  
+                </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
             
          )
 }

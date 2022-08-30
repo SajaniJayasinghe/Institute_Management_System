@@ -61,58 +61,63 @@ render() {
    <div>
      <div className='container'><br/><br/>
        <div align="center">
-        <h3 style={{fontFamily:"times new roman", fontSize:"40px"}}><u><b>COURSES LIST</b></u></h3> <br></br>
-          <div align="right">
-            <Button variant="contained" style={{background: "#8BC0FF", width: 7+"%",color:"BLACK",borderRadius: 20,}}
-                 href="/"  disableElevation type="submit" >CREATE</Button>&nbsp;
-                <IconButton aria-label="delete" size="medium" href='/'>
+         <h3 style={{fontFamily:"times new roman", fontSize:"40px"}}><u><b>COURSES LIST</b></u></h3> <br></br>
+           <div align="right">
+               <Button variant="contained" style={{background: "#8BC0FF", width: 7+"%",color:"BLACK",borderRadius: 20,}}
+                 href="/"  disableElevation type="submit" >CREATE
+               </Button>&nbsp;
+                
+               <IconButton aria-label="delete" size="medium" href='/'>
                   <DescriptionIcon fontSize="large"  style={{color: "black"}}/>
-                </IconButton>
-              </div>
-            <div className="col-md-3" style={{marginRight:'970px'}}> 
-              <input type="text" className="form-control" placeholder="Search Course Name or Course Code " onChange={this.handleSearchArea}/>
-                <br/> 
-                  </div>    
-                    <table class = "table" >
-                      <thead> 
-                        <tr bgcolor="#083C53" >
-                            <th ><font color="#fff">No</font></th>
-                            <th ><font color="#fff">Course Name</font></th>
-                            <th ><font color="#fff">Course Code</font></th>
-                            <th ><font color="#fff">Subtitle</font></th>
-                            <th ><font color="#fff">Lecture Name</font></th>
-                            <th ><font color="#fff">Description</font></th>
-                            <th ><font color="#fff">Courseadded Date</font></th>   
-                            <th ><font color="#fff">Action</font></th>
-                        </tr>
-                     </thead>
-                   <tbody>
-                   {this.state.courses.map((courses,index)=>(
-                         <tr>
-                            <th scope='row'>{index + 1}</th>
-                            <td>{courses.course_name}</td>
-                            <td>{courses.course_code}</td>
-                            <td>{courses.subtitle}</td>
-                            <td>{courses.lecture_name}</td>
-                            <td>{courses.description}</td>
-                            <td>{courses.courseadded_date}</td>
-                            <td>
-                              <IconButton aria-label="edit" color="primary" size="small"
-                                  href={`/update/${courses._id}`}>
-                                <EditIcon fontSize="small"  style={{color: "black"}} />
-                              </IconButton> &nbsp;&nbsp;&nbsp;&nbsp;
-
-                              <IconButton aria-label="delete" size="small">
-                                <DeleteForeverIcon fontSize="small" onClick={()=>this.onDelete(courses._id)}  style={{color: "black"}}/>
-                              </IconButton>
-                            </td>
-                          </tr>
-                          ))}
-                   </tbody>
-                  </table>
-              </div>
+               </IconButton>
            </div>
-        </div>
+            
+            <div className="col-md-3" style={{marginRight:'970px'}}> 
+              <input type="text" className="form-control" placeholder="Search Course Name or Course Code " 
+                onChange={this.handleSearchArea}/> <br/> 
+            </div>    
+
+            <table class = "table" >
+              <thead> 
+                <tr bgcolor="#083C53" >
+                  <th ><font color="#fff">No</font></th>
+                  <th ><font color="#fff">Course Name</font></th>
+                  <th ><font color="#fff">Course Code</font></th>
+                  <th ><font color="#fff">Subtitle</font></th>
+                  <th ><font color="#fff">Lecture Name</font></th>
+                  <th ><font color="#fff">Description</font></th>
+                  <th ><font color="#fff">Courseadded Date</font></th>   
+                  <th ><font color="#fff">Action</font></th>
+                </tr>
+              </thead>
+                   
+              <tbody>
+                {this.state.courses.map((courses,index)=>(
+                  <tr>
+                    <th scope='row'>{index + 1}</th>
+                    <td>{courses.course_name}</td>
+                    <td>{courses.course_code}</td>
+                    <td>{courses.subtitle}</td>
+                    <td>{courses.lecture_name}</td>
+                    <td>{courses.description}</td>
+                    <td>{courses.courseadded_date}</td>
+                    <td>
+                      <IconButton aria-label="edit" color="primary" size="small"
+                           href={`/update/${courses._id}`}>
+                         <EditIcon fontSize="small"  style={{color: "black"}} />
+                      </IconButton> &nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <IconButton aria-label="delete" size="small">
+                         <DeleteForeverIcon fontSize="small" onClick={()=>this.onDelete(courses._id)}  style={{color: "black"}}/>
+                      </IconButton>
+                    </td>
+                  </tr>
+                ))}
+               </tbody>
+            </table>
+       </div>
+     </div>
+   </div>
     )
   }
 }

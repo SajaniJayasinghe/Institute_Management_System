@@ -100,7 +100,7 @@ export default function UpdateCourseDetails() {
        <div>
          <br/><br/>
            <div class="row d-flex align-items-center justify-content-center">
-             <div style={{width: 1000,background: "#F5F5F5",height:575,backgroundSize:"1000px "}}> 
+              <div style={{width: 1000,background: "#F5F5F5",height:575,backgroundSize:"1000px "}}> 
                 <div class="card-body">  
                    <form action="" method="post" name="form"onSubmit={onUpdate}>
                      <div style={{display:'flex'}}>
@@ -197,9 +197,9 @@ export default function UpdateCourseDetails() {
                        </div>
                      </div>
                    </form>
-                 </div>
-               </div>
-             </div>
+                </div>
+              </div>
            </div>
+       </div>
   )
 }
