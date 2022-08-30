@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import StudentLogin from './components/RD_Components/StudentLogin';
 
 export default class App extends Component {
     render() {
         return (
           <Router>
-            <Switch>
+            <Routes>
             
              {/* Sajani */}
 
 
 
              {/* Randy */}
-
+             <Route path= "/" element={<StudentLogin/>}exact></Route>
 
 
              {/* Aroshini */}
@@ -21,7 +22,7 @@ export default class App extends Component {
              {/* Imaya */}
 
 
-            </Switch>
+            </Routes>
         </Router>
 
       )

@@ -100,7 +100,7 @@ router.put('/student/update', auth, async (req, res) => {
           throw new Error('There is no student account')
         }
   
-        const studentUpdate = await student.findByIdAndUpdate(req.stu.id, 
+        const studentUpdate = await student.findByIdAndUpdate(req.Stu.id, 
           {
             studentName:studentName,
             phone:phone,
@@ -122,7 +122,7 @@ router.put('/student/update', auth, async (req, res) => {
           if (!Stu) {
             throw new Error("There is no student to delete");
           }
-          const deleteProfile = await student.findByIdAndDelete(req.stu.id);
+          const deleteProfile = await student.findByIdAndDelete(req.Stu.id);
           res.status(200).send({ status: "Student deleted", Stu: deleteProfile });
         } catch (error) {
           res
