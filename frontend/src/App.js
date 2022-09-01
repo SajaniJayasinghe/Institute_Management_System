@@ -12,6 +12,9 @@ import SpecificCourse from './components/SS_Components/SpecificCourse';
 import CoursesDisplay from './components/SS_Components/CoursesDisplay';
 import AdminDashboard from './components/SS_Components/adminDashboard';
 import HomePage from './components/SS_Components/HomePage';
+import StudentProfile from './components/RD_Components/StudentProfile';
+import StudentRegistration from './components/RD_Components/StudentRegistration';
+import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfile';
 
 
 export default class App extends Component {
@@ -30,11 +33,14 @@ export default class App extends Component {
              <Route path = "/specific/:courseID" element={<SpecificCourse/>}/>
              <Route path = "/coursesdisplay" element={<CoursesDisplay/>}/>
              <Route path = "/admindashboard" element={<AdminDashboard/>}/>
-             {/* <Route path = "/" element={<HomePage/>}/> */}
+             <Route path = "/" element={<HomePage/>}/>
 
              
              {/* Randy */}
-             <Route path= "/" element={<StudentLogin/>}exact></Route>
+             <Route path= "/signin" element={<StudentLogin/>}/>
+             <Route path = "/profile" element={<StudentProfile/>}/>
+             <Route path = "/signup" element={<StudentRegistration/>}/>
+             <Route path = "/update" element={<StudentUpdateProfile/>}/>
 
 
              {/* Aroshini */}

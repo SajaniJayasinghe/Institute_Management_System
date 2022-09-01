@@ -7,14 +7,14 @@ const jwt = require('jsonwebtoken');
 const auth = require("../../middleware/auth");
 
 //student signup
-router.post("/student/signup",async (req, res) => {
+router.post("/signup",async (req, res) => {
     try {
       const {
         studentName,
-        phone,
         email,
         pwd,
-        NIC
+        NIC,
+        phone
       } = req.body;
 
       let student1 = await student.findOne({ email });
@@ -24,10 +24,11 @@ router.post("/student/signup",async (req, res) => {
 
       student1 = {
         studentName : studentName,
-        phone : phone,
         email: email,
         pwd: pwd,
-        NIC: NIC
+        NIC: NIC,
+        phone : phone
+ 
       };
     
       const newstudent = new student(student1);
@@ -45,7 +46,7 @@ router.post("/student/signup",async (req, res) => {
   });
 
    //student login
-   router.post('/student/signin', async (req, res) => {
+   router.post('/signin', async (req, res) => {
     try {
       const {email, pwd} = req.body
       const Stu = await student.findByCredentials(email, pwd)
@@ -59,7 +60,7 @@ router.post("/student/signup",async (req, res) => {
   });
 
 //get student profile
-router.get("/student/profile", auth, async (req, res) => {
+router.get("/profile", auth, async (req, res) => {
     try {
       res.status(201)
       res.send({ success: "Student Logged In", Stu: req.Stu });
@@ -72,7 +73,7 @@ router.get("/student/profile", auth, async (req, res) => {
 
   
   //log out profile
-  router.post("/student/logout", auth, async (req, res) => {
+  router.post("/logout", auth, async (req, res) => {
     try {
       req.Stu.tokens = req.Stu.tokens.filter((token) => {
         return token.token !== req.token;
@@ -86,12 +87,13 @@ router.get("/student/profile", auth, async (req, res) => {
  });
 
 // update student profile
-router.put('/student/update', auth, async (req, res) => {
+router.put('/update', auth, async (req, res) => {
     try {
       const {
           studentName,
-          phone,
           email,
+          phone,
+          
         } = req.body;
   
       let Stu = await student.findOne({email})
@@ -103,8 +105,9 @@ router.put('/student/update', auth, async (req, res) => {
         const studentUpdate = await student.findByIdAndUpdate(req.Stu.id, 
           {
             studentName:studentName,
-            phone:phone,
-            email:email
+            email:email,
+            phone:phone
+            
           })
   
           res.status(200).send({status: 'Student Profile Updated', Stu: studentUpdate})
@@ -116,7 +119,7 @@ router.put('/student/update', auth, async (req, res) => {
       });
   
       //delete student account
-    router.delete("/student/delete", auth, async (req, res) => {
+    router.delete("/delete", auth, async (req, res) => {
         try {
           const Stu = await student.findById(req.Stu.id);
           if (!Stu) {
