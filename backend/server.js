@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
+const multer = require("multer");
 require("dotenv").config();
 
 //app middleware
@@ -32,15 +33,36 @@ connection.once("open", () => {
 console.log("Mongodb connection success!!!");
 })
 
+const storage = multer.diskStorage({
+    destination:(req,file,cb) => {
+        cb(null,"images");
+    },
+    filename:(req,file,cb) => {
+        cb(null,req.body.name)
+    },
+});
+
+const upload = multer({ storage: storage});
+app.post("/uplaod", upload.single("file"), (req,res) => {
+    res.status(200).json("File has been uplaoded");
+});
+
+
 // @import routes
 const courseRouter = require("./routes/SS_routes/courses");
 
 const studentRouter = require("./routes/RD_routes/student");
 
+const postRouter = require("./routes/IS_routes/posts");
+const categoryRouter = require("./routes/IS_routes/categories");
+
 //@routes use
 app.use("/course",courseRouter);
 
 app.use("/student",studentRouter);
+
+app.use("/posts",postRouter );
+app.use("/categories",categoryRouter );
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
