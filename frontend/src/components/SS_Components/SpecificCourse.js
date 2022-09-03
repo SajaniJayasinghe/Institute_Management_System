@@ -14,7 +14,12 @@ export default function SpecificCourse() {
     const [description, setdescription] = useState("");
     const [courseadded_date, setcourseadded_date] = useState("");
     const [course_thumbnail, setcourse_thumbnail] = useState("");
-    const [course_content, setcourse_content] = useState("");
+    const [course_content, setcourse_content]  = useState("");
+    
+    // const [course_content, setcourse_content] = useState([{
+    //   course_content:""
+    // }]);
+    
    
     const params = useParams();
     const courseID= params.courseID;
@@ -48,34 +53,41 @@ export default function SpecificCourse() {
                  <div class="row">
               <div class="col-sm">
 
-                   <div style={{display:"flex"}}>
-                     <h2><b>{course_name}</b></h2>
-                    </div>
+                   <div style={{display:"flex",marginLeft:"200px"}}>
+                     <h2><b><u>{course_name}</u></b></h2>
+                    </div><br/>
 
-                   <div style={{display:"fleX" }}>
+                   <div style={{display:"fleX",marginLeft:"50px"}}>
                      <img className="activator" id="aimage" src={course_thumbnail} width={350} />
                     </div><br/>
          
-                     <div style={{display:"fleX" }}>
+                     <div style={{display:"fleX" ,marginLeft:"50px"}}>
                        <b>{subtitle}</b>
                      </div>
 
-                     <div style={{display:"fleX" }}>
+                     <div style={{display:"fleX" ,marginLeft:"50px"}}>
                        <b>{lecture_name}</b>
                      </div><br/>
-         
-                 <Button variant="contained" className="w-10" 
-                  style={{background: "#8BC0FF", width: 35+"%",color:"BLACK",borderRadius: 20,}}
-                    disableElevation  >{course_name}
-                 </Button>
-         
-              </div>
+                 
+                  {/* {course_content.map((doc)=>{
+                     <div style={{marginTop:"10px"}}>
+                     <Button variant="contained" className="w-10" 
+                       style={{background: "#8BC0FF",marginLeft:"170px", width: 30+"%",color:"BLACK",borderRadius: 20,}}
+                       disableElevation  href={doc.course_content} download>Download
+                    </Button></div>
+                  })}   */}
+
+                     <Button variant="contained" className="w-10" 
+                       style={{background: "#8BC0FF",marginLeft:"170px", width: 30+"%",color:"BLACK",borderRadius: 20,}}
+                       disableElevation download>Download
+                      </Button>
+
+                 </div>
                    <div class="col-sm">
-                     <div style={{display:"fleX" }}>
+                     <div style={{display:"fleX",marginRight:"70px" ,textAlign:"justify"}}>
                       <b>{description}</b>
                      </div>
                     </div>
-   
                  </div>
               </div>
               </Paper>
