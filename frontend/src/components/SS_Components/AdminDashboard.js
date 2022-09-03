@@ -69,7 +69,7 @@ export default class AdminDashboard extends Component {
                    height="190px"
                 /></a>
             <div class="card-body" style={{background: "#8BC0FF"}}>
-              <h5 class="card-title" id="dashh5" align="center"><b> Courses Management</b></h5>
+              <h5 class="card-title" id="dashh5" align="center" href="/courseDetails"><b> Courses Management</b></h5>
             </div>
             </div>
         </div>

@@ -15,6 +15,7 @@ router.post("/signup",async (req, res) => {
         pwd,
         NIC,
         phone
+
       } = req.body;
 
       let student1 = await student.findOne({ email });
@@ -29,6 +30,7 @@ router.post("/signup",async (req, res) => {
         NIC: NIC,
         phone : phone
  
+
       };
     
       const newstudent = new student(student1);
@@ -58,6 +60,7 @@ router.post("/signup",async (req, res) => {
       console.log(error);
     }
   });
+
 
 //get student profile
 router.get("/profile", auth, async (req, res) => {
@@ -133,6 +136,7 @@ router.put('/update', auth, async (req, res) => {
             .send({ status: "error with /delete/:id", error: error.message });
         }
       });
+
 
 
   module.exports = router;
