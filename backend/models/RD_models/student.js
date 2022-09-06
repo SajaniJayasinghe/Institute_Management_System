@@ -10,12 +10,10 @@ const studentSchema = new mongoose.Schema({
         required : true
     
       },
-
       phone: {
         type: String,
         required: true,
       },
-
       email: {
         type: String,
         required: true,
@@ -29,16 +27,23 @@ const studentSchema = new mongoose.Schema({
     },
 
     pwd: {
-        type: String,
-        required: true,
-        trim: true,
-    },
 
-    NIC: {
+      type: String,
+      required: true,
+      trim: true,
+  },
+
+  
+  NIC: {
+    type: String,
+    required: true,
+  },
+
+      phone: {
         type: String,
         required: true,
       },
-
+      
       tokens: [
         {
         token: {
