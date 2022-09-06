@@ -43,9 +43,9 @@ app.use("/course", courseRouter);
 
 app.use("/student", studentRouter);
 
-app.use("/feedback", feedbackRouter);
+app.use("/feedbacks", feedbackRouter);
 
-app.use("/student",studentRouter);
+app.use("/student", studentRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);
