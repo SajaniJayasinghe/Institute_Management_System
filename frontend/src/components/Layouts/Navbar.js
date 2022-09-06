@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Button from '@material-ui/core/Button';
 
 
-export default class UserNavBar extends Component {
+export default class NavBar extends Component {
     render(){
         return(
   <div>
+
         <img
             style={{marginLeft:25}}
             src="https://res.cloudinary.com/nibmsa/image/upload/v1661841187/images-removebg-preview_zzfjs5.png"
@@ -15,8 +15,8 @@ export default class UserNavBar extends Component {
             className="d-inline-block align-top"
             alt="">
             </img>
-      
-       <img
+        
+        <img
             style={{marginTop:20,marginRight:20}}
             src="https://res.cloudinary.com/nibmsa/image/upload/v1661841580/219983_ckz2ut.png"
             width="60"
@@ -26,38 +26,27 @@ export default class UserNavBar extends Component {
             className="d-inline-block align-top"
             alt=""/>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
            <div class="modal-dialog">
-                <div class="modal-content" style={{background:"#045582"}}>
-                   <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel" style={{color:"white"}}>LOGIN AS </h5>         
-                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-           
-
-             <div class="modal-body" align="right">
+                <div class="modal-content" style={{background:"#E9F6FD"}}>
+                   <div class="modal-header">       
+                         
+                   
              <Button
-                   href='/'
-                   style={{ color:"black",background:"#D9D9D9" }}
+                   href='/profile'
+                   style={{ color:"black",background:"#8BC0FF", borderRadius:20 }}
                    variant="outlined"
-                   startIcon={<AccountCircleIcon />}
+                  
                  >
-                  Admin
+                My Profile
                </Button>   &nbsp;&nbsp;
- 
-               <Button
-                   href='/signin'
-                   style={{ color:"black",  background:"#D9D9D9" }}
-                   variant="outlined"
-                   startIcon={<AccountCircleIcon />}
-                 >
-                  User 
-               </Button>     
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
             </div>
          </div>
        </div>
-   
+
+
        <nav class="navbar navbar-expand-lg " style={{ backgroundColor:"#DAE7F8"}} >
        <div class="container">  
        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 

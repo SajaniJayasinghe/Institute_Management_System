@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import {toast} from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import UpdateProfile from './StudentUpdateProfile';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import NavBar from '../Layouts/Navbar';
+import Footer from "../Layouts/footer";
 
-// toast.configure()
 
 const StudentProfile = () => {
     const [studentName, setstudentName] = useState("");
@@ -97,8 +96,8 @@ if (loading) {
 
    
 return (
-    <div class="bod" style={{background:"#E3E4FA"}}  >
-   
+    <div>
+   <NavBar/>
         <br/><br/> <br/><br/> <br/><br/>
          <div class="container">
           <div class="main-bod" >
@@ -107,7 +106,7 @@ return (
                 <div class="cardd" >
                   <div class="cardd-body" >
                     <div class="d-flex flex-column align-items-center text-center" >
-                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/12-peoples-avatars/avatar.png"  class="rounded-circle" width="180" height="180"/>
+                        <img src="https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png"  class="rounded-circle" width="200" height="200"/>
                       <div class="mt-3">
                         <h2><b>{studentName}</b></h2>
                       </div>
@@ -141,7 +140,7 @@ return (
                  <h6 class="mb-0"><b>NIC</b></h6>
              </div>
           <div class="col-sm-9 text-secondary">
-               <b>{email}</b>
+               <b>{NIC}</b>
                   </div>
                       </div>
                          <hr/>
@@ -179,7 +178,7 @@ return (
                   upphone = {phone}         
                 />
                 </div>
-           
+           <Footer/>
         </div>
       )
     }

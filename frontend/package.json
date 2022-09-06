@@ -30,7 +30,7 @@
     "react-file-base64": "^1.0.3",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
-    "react-toastify": "^9.0.8"
+    "react-toastify": "^9.0.8",
     "stars-rating": "^1.1.0"
   },
   "devDependencies": {
