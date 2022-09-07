@@ -53,11 +53,11 @@ export default class NavBar extends Component {
        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
 
        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "black",fontFamily:"times new roman", fontSize:20,marginLeft:50,marginRight:50}}><b>Home</b></a>
+          <a class="nav-link" aria-current="page" href="/" style={{color: "black",fontFamily:"times new roman", fontSize:20,marginLeft:50,marginRight:50}}><b>Home</b></a>
         </li> 
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "black" ,fontFamily:"times new roman", fontSize:20,marginLeft:40,marginRight:50 }}><b>Programs</b></a>
+          <a class="nav-link" aria-current="page" href="/programs" style={{color: "black" ,fontFamily:"times new roman", fontSize:20,marginLeft:40,marginRight:50 }}><b>Programs</b></a>
         </li> 
 
         <li class="nav-item">
