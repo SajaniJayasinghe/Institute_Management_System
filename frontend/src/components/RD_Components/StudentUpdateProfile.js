@@ -3,7 +3,6 @@ import axios from "axios";
 import { Modal } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import SendIcon from '@material-ui/icons/Send';
-import {toast} from 'react-toastify';
 
 const UpdateProfile = ({
     upstudentName,

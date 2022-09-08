@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../Layouts/footer';
+import UserNavBar from '../Layouts/UserNavBar';
 
-// toast.configure()
 
 export default function StudentRegistration(){
     const [studentName,setstudentName] = useState("");
@@ -43,21 +42,6 @@ export default function StudentRegistration(){
       }else{
          alert("Password dismatch")
      }
-
-        //     axios.post("localhost:8070/student/signup",newStudent )
-        //     .then(()=>{
-        //       toast.success('Registration Success',{position:toast.POSITION.TOP_CENTER});
-        //         // alert("Registeration Success!!");
-        //         window.location = "/signin"
-        //         console.log (newStudent)
-        //     }).catch((err)=>{
-        //         // alert(err)
-        //         toast.warning('Student account already exists. Please check your Email.',{position:toast.POSITION.TOP_CENTER});
-        //     })
-        // }else{
-        //     // alert("Password Dismatch");
-        //     toast.warning('Password dismatch',{position:toast.POSITION.TOP_CENTER});
-        // }
         setstudentName("");
         setemail("");  
         setPassowrd1("");
@@ -68,20 +52,20 @@ export default function StudentRegistration(){
     }
 
     return (
-    <div style={{ backgroundColor:"#2B3856" }} >
-       {/* <MainHomePageNavBar/><br/><br/> */}
+    <div>
+      <UserNavBar/><br/><br/>
           <div>
              <div className="row d-flex align-items-center justify-content-center">
-               <div style={{width: 1000,background: "#CCCCFF",height:520}}>
+               <div style={{width: 1000,background: "#DCEAFB",height:600,borderRadius:"20px"}}>
                  <div className="card-body" >       
              
               <form action="" method="post" name="form" onSubmit={sendData}> 
            <div className="row g-0">
-         <div className="col-xl-7 d-none d-xl-block"><br/>
+         <div className="col-xl-7 d-none d-xl-block"><br/><br/>
       <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <b><u>STUDENT&nbsp;&nbsp;REGISTERATION</u></b></h3><br/>
+    <b><u>STUDENT&nbsp;&nbsp;REGISTERATION</u></b></h3><br/><br/>
        <img 
-           src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/reading_0re1.svg" 
+           src="https://res.cloudinary.com/nibmsa/image/upload/v1662483007/Amerikada_t%C9%99hsil_uzaq_deyil__-removebg-preview_fdicdn.png" 
               style={{width: 550}}/>
                  </div>
              
@@ -125,7 +109,7 @@ export default function StudentRegistration(){
                                           
                                           <div className="form-outline mb-2">
                       <span id="passwordHelpInline" className="form-text" style={{marginBottom:'2px'}}> 
-                         <i className="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;NIC</span>
+                         <i className="fa fa-address-card"></i>&nbsp;&nbsp;&nbsp;NIC</span>
                            <div className="col-md-10">
                               <input type="text" className="form-control" onChange={(e) => setNIC(e.target.value)}  required />
                                 </div>
@@ -142,11 +126,17 @@ export default function StudentRegistration(){
     
                                     <div className="d-flex justify-left pt-1" >
                                <span id="passwordHelpInline" className="form-text" style={{marginBottom:'2px'}}> Already Registered? &nbsp;&nbsp;</span>
-                            <a href="/signin" >Sign In</a> </div>
+                            <a href="/signin" >Sign In</a> </div><br/>
                         <div className="d-flex justify-content-end">
-                       <Button 
-                           type="submit" class="btn btn-primary">
-                          <i className="fa fa-check-circle"> &nbsp;&nbsp;  Submit &nbsp;&nbsp;</i></Button></div>
+                        <Button 
+                           type="submit" style={{
+                              background: "#8BC0FF",
+                              width: 33 + "%",
+                              height:20 +"%",
+                              color: "BLACK",
+                              borderRadius: 20,
+                        }}>
+                          <i className="fa fa-check-circle"/>&nbsp;Submit</Button></div>
       
                            </div>
                         </div>
@@ -155,7 +145,7 @@ export default function StudentRegistration(){
               </div>
           </div>
       </div><br/><br/><br/>
- 
+ <Footer/>
 </div>
     )
 }
