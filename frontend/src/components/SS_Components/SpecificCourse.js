@@ -15,11 +15,7 @@ export default function SpecificCourse() {
     const [courseadded_date, setcourseadded_date] = useState("");
     const [course_thumbnail, setcourse_thumbnail] = useState("");
     const [course_content, setcourse_content]  = useState("");
-    
-    // const [course_content, setcourse_content] = useState([{
-    //   course_content:""
-    // }]);
-    
+
    
     const params = useParams();
     const courseID= params.courseID;

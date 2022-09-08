@@ -13,7 +13,7 @@ export default class AdminDashboard extends Component {
            <div class="row row-cols-1 row-cols-md-4 g-4" style={{marginLeft:"130px"}}>
             <div class="col">
                <div class="shadow h-60" id="cardcol1">
-                <a href="/delivery"><img
+                <a href="/"><img
                    src="https://res.cloudinary.com/nibmsa/image/upload/v1661858520/Resources_fdiab6.png"
                    class="card-img-top"
                    alt="..."
@@ -28,7 +28,7 @@ export default class AdminDashboard extends Component {
 
         <div class="col">
         <div class="shadow h-60" id="cardcol1">
-        <a href="/advertisement"><img
+        <a href="/"><img
                 src="https://res.cloudinary.com/nibmsa/image/upload/v1661859711/Blog_wl0lab.jpg"
                 class="card-img-top"
                 alt="..."
@@ -43,7 +43,7 @@ export default class AdminDashboard extends Component {
         
         <div class="col">
             <div class="shadow h-60" id="cardcol1">
-            <a href="/request"><img
+            <a href="/"><img
                 src="https://res.cloudinary.com/nibmsa/image/upload/v1661859872/depositphotos_50975555-stock-photo-feedback-with-colourful-comments-symbol_y76jfj.webp"
                 class="card-img-top"
                 alt="..."
@@ -61,8 +61,8 @@ export default class AdminDashboard extends Component {
            <div class="row row-cols-1 row-cols-md-4 g-4" style={{marginLeft:"130px"}}>
             <div class="col">
                <div class="shadow h-60" id="cardcol1">
-                <a href="/delivery"><img
-                   src="https://res.cloudinary.com/nibmsa/image/upload/v1661860096/course_indgs3.jpg"
+                <a href="/courseDetails"><img
+                   src="https://res.cloudinary.com/nibmsa/image/upload/v1662541862/course_indgs3-removebg-preview_ls9gin.png"
                    class="card-img-top"
                    alt="..."
                    width="25px"
@@ -76,7 +76,7 @@ export default class AdminDashboard extends Component {
 
         <div class="col">
         <div class="shadow h-60" id="cardcol1">
-        <a href="/advertisement"><img
+        <a href="/"><img
                 src="https://res.cloudinary.com/nibmsa/image/upload/v1661860165/shutterstock_234318064_lg5ecb.webp"
                 class="card-img-top"
                 alt="..."

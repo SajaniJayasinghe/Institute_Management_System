@@ -63,6 +63,7 @@ app.use("/student", studentRouter);
 
 app.use("/feedback", feedbackRouter);
 
+app.use("/student",studentRouter);
 app.use("/posts",postRouter );
 app.use("/categories",categoryRouter );
 
