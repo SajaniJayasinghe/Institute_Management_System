@@ -70,13 +70,13 @@ return(
 
         <div className="form-group">
                   <small className="text-muted">Chnage Your Email</small>
-              <input type="email" className="form-control"  Value={email}
+              <input readOnly type="text" className="form-control"  Value={email}
             onChange={(e) => setEmail(e.target.value)} required/>
         </div>
 
         <div className="form-group">
                   <small className="text-muted">Chnage Your NIC</small>
-              <input type="NIC" className="form-control"  Value={NIC}
+              <input type="text" className="form-control"  Value={NIC}
             onChange={(e) => setNIC(e.target.value)} required/>
         </div>
 

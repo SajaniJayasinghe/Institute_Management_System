@@ -96,6 +96,7 @@ router.put('/update', auth, async (req, res) => {
           studentName,
           email,
           phone,
+          NIC,
           
         } = req.body;
   
@@ -109,7 +110,8 @@ router.put('/update', auth, async (req, res) => {
           {
             studentName:studentName,
             email:email,
-            phone:phone
+            phone:phone,
+            NIC: NIC
             
           })
   

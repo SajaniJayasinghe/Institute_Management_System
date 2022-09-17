@@ -158,9 +158,10 @@ return (
                         <div class="row">
                     <div class="col-sm-12"><br/>
                 <center>
-           <button onClick={updateUserProfile} class="btn btn-warning " href="" target="__blank">Edit Profile Details</button>&nbsp;&nbsp;&nbsp;
-        <button style={{background: "#151B54", color:"#ffff"}} onClick={studentLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-          <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button></center>
+           {/* <button onClick={updateUserProfile} class="btn btn-warning " href="" target="__blank">Edit Profile Details</button>&nbsp;&nbsp;&nbsp; */}
+           <button style={{background: "#4863A0", color:"#ffff"}} onClick={updateUserProfile} class="btn btn " target="__blank">Edit Profile Details</button>&nbsp;&nbsp;&nbsp;
+        <button style={{background: "#4863A0", color:"#ffff"}} onClick={studentLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
+          <button style={{background: "#4863A0", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button></center>
               </div>
                  </div><br/><br/><br/><br/><br/><br/><br/>
                     </div>
