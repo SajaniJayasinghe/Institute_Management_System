@@ -61,7 +61,9 @@ app.use("/course", courseRouter);
 
 app.use("/student", studentRouter);
 
-app.use("/feedback", feedbackRouter);
+app.use("/feedbacks", feedbackRouter);
+
+app.use("/student", studentRouter);
 
 app.use("/posts",postRouter );
 app.use("/categories",categoryRouter );
