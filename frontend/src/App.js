@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import StudentLogin from './components/RD_Components/StudentLogin';
+
 
 import {BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
@@ -16,6 +16,9 @@ import Programs from './components/SS_Components/Programs';
 import StudentProfile from './components/RD_Components/StudentProfile';
 import StudentRegistration from './components/RD_Components/StudentRegistration';
 import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfile';
+import StudentLogin from './components/RD_Components/StudentLogin';
+import AdminLogin from './components/RD_Components/AdminLogin';
+import AdminRegistration from './components/RD_Components/AdminRegistration';
 
 
 export default class App extends Component {
@@ -42,6 +45,8 @@ export default class App extends Component {
              <Route path = "/profile" element={<StudentProfile/>}/>
              <Route path = "/signup" element={<StudentRegistration/>}/>
              <Route path = "/update" element={<StudentUpdateProfile/>}/>
+             <Route path= "/adminsignin" element={<AdminLogin/>}/>
+             <Route path= "/adminsignup" element={<AdminRegistration/>}/>
 
 
              {/* Aroshini */}
