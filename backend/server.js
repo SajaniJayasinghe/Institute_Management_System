@@ -51,6 +51,9 @@ app.post("/uplaod", upload.single("file"), (req,res) => {
 const courseRouter = require("./routes/SS_routes/courses");
 
 const studentRouter = require("./routes/RD_routes/student");
+const adminRouter = require("./routes/RD_routes/admin");
+
+
 
 const feedbackRouter = require("./routes/AA_routes/feedbacks");
 const postRouter = require("./routes/IS_routes/posts");
@@ -60,6 +63,7 @@ const categoryRouter = require("./routes/IS_routes/categories");
 app.use("/course", courseRouter);
 
 app.use("/student", studentRouter);
+app.use("/admin", adminRouter);
 
 app.use("/feedback", feedbackRouter);
 
