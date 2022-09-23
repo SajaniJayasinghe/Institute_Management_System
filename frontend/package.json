@@ -21,20 +21,28 @@
     "axios": "^0.27.2",
     "file-saver": "^2.0.5",
     "firebase": "^9.9.3",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
     "material-icons": "^1.11.11",
     "parcel": "^2.7.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+    "react-fade-in": "^2.0.1",
     "react-file-base64": "^1.0.3",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
+    "react-show-more-text": "^1.5.2",
+
     "react-toastify": "^9.0.8",
     "stars-rating": "^1.1.0"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
-    "process": "^0.11.10"
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.4"
   }
 }
