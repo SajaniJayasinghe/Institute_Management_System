@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import app from "../../FireBase";
-// import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
 import Button from "@material-ui/core/Button";
 import AdminNavBar from "../Layouts/AdminNavBar";
 import Footer from "../Layouts/footer";

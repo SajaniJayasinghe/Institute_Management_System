@@ -25,7 +25,7 @@ router.post("/add/:courseID", auth, async (req, res) => {
     let feedback = {
       courseID: courseID,
       studentId: req.Stu._id,
-      //   userPicture: req.Stu.imageUrl,
+      studentPicture: req.Stu.imageUrl,
       studentName: req.Stu.studentName,
       rating: rating,
       comment: comment,

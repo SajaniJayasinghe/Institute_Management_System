@@ -120,15 +120,12 @@ export default class StudentLogin extends Component {
                           />
                         </div>
                       </div>
-                      {/* <Button type="submit" class="btn btn-primary">
+                      <Button type="submit" class="btn btn-primary">
                         <i className="fa fa-check-circle">
                           {" "}
                           &nbsp;&nbsp; Sign in &nbsp;&nbsp;
                         </i>
-                      </Button> */}
-                      <button type="submit" class="btn-animate">
-                        Login
-                      </button>
+                      </Button>
                       <div class="divider d-flex align-items-center my-4">
                         <span
                           id="passwordHelpInline"

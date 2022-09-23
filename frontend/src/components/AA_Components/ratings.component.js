@@ -47,9 +47,10 @@ const Ratings = ({ ratings, courseID }) => {
     const fetchProductData = async () => {
       try {
         await axios
-          .get(`http://localhost:8070/courses/${courseID.courseID}`)
+          .get(`http://localhost:8070/course/${courseID.courseID}`)
           .then((res) => {
-            setAverageRating(res.data.courses.averageRating);
+            setAverageRating(res.data.existingCourses.averageRating);
+            console.log(res.data.existingCourses.averageRating);
             setLoading(false);
           })
           .catch((err) => {
@@ -96,8 +97,8 @@ const Ratings = ({ ratings, courseID }) => {
                       color2={"#eb8a2f"}
                     />
                   </div>
-                </label>
-                <label>
+                  {/* </label>
+                <label> */}
                   <div
                     style={{
                       pointerEvents: "none",

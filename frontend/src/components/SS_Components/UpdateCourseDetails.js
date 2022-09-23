@@ -2,14 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import app from "../../FireBase";
-// import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
 import Button from "@material-ui/core/Button";
 import Footer from "../Layouts/footer";
 import AdminNavBar from "../Layouts/AdminNavBar";
 
 export default function UpdateCourseDetails() {
   const [course_name, setcourse_name] = useState("");
-  const [course_code, setcourse_code] = useState("");
+  const [course_code, setcourses_code] = useState("");
   const [subtitle, setsubtitle] = useState("");
   const [lecture_name, setlecture_name] = useState("");
   const [description, setdescription] = useState("");

@@ -6,15 +6,19 @@ const feedbackSchema = new mongoose.Schema({
     required: true,
     ref: "courses",
   },
+  course_name: {
+    type: String,
+    required: false,
+  },
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    required: false,
     ref: "student",
   },
-  //   studentPicture: {
-  //     type: String,
-  //     required: true,
-  //   },
+  studentPicture: {
+    type: String,
+    required: false,
+  },
   studentName: {
     type: String,
     required: true,

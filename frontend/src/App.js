@@ -15,9 +15,13 @@ import HomePage from "./components/SS_Components/HomePage";
 import StudentProfile from "./components/RD_Components/StudentProfile";
 import StudentRegistration from "./components/RD_Components/StudentRegistration";
 import StudentUpdateProfile from "./components/RD_Components/StudentUpdateProfile";
-import CreateFeedback from "./components/AA_Components/create-feedback.component";
+// import CreateFeedback from "./components/AA_Components/create-feedback.component";
 import Feedbacks from "./components/AA_Components/feedbacks.component";
-
+import CreateBlogs from "./components/IS_Components/createBlogs";
+import BlogsDisplay from "./components/IS_Components/BlogsDispaly";
+import SpecificBlog from "./components/IS_Components/SpecificBlog";
+import AdminFeedbacks from "./components/AA_Components/Admin_Feedback_Section";
+//import Blogs from "./components/IS_Components/BlogPage";
 export default class App extends Component {
   render() {
     return (
@@ -40,10 +44,17 @@ export default class App extends Component {
 
           {/* Aroshini */}
 
-          <Route path="/specific/:courseID" element={<CreateFeedback />} />
+          {/* <Route path="/specific/:courseID" element={<CreateFeedback />} /> */}
           <Route path="/specific/:courseID" component={Feedbacks} />
 
+          {/* Admin(Aroshini) */}
+          <Route path="/feedback" element={<AdminFeedbacks />} />
+
           {/* Imaya */}
+          {/* <Route path="/addblogs" element={<CreateBlogs />} />
+          <Route path="/readblogs" element={<BlogsDisplay />} />
+          <Route path="/specificBlog/:blogID" element={<SpecificBlog />} /> */}
+          {/* <Route path="/specific/:blogID" element={<AllBlog />} /> */}
         </Routes>
       </Router>
     );
