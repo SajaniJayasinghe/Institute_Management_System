@@ -25,8 +25,6 @@ export default class App extends Component {
           <Router>
             <Routes>
 
-           
-
             
              {/* Sajani */}
              <Route path = "/createCourse" element= {<CreateNewCourses/>} exact/>
@@ -56,4 +54,4 @@ export default class App extends Component {
 
       )
     }
-}
+    

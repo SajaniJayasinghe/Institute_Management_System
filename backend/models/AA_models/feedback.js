@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const feedbackSchema = new mongoose.Schema({
-  courseId: {
+  courseID: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "courses",
