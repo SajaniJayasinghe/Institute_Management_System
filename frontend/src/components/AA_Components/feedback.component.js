@@ -139,15 +139,7 @@ const Feedback = ({
 
         <div style={{ fontSize: 15 }}>
           <div style={{ paddingLeft: 105, display: "flex" }}>
-            <ShowMoreText
-              lines={4}
-              more="Show more"
-              less="Show less"
-              expanded={false}
-              keepNewLines={false}
-            >
-              {comment}
-            </ShowMoreText>
+            {comment}
           </div>
 
           {verify === null || studentId !== verify._id ? (

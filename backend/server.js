@@ -56,8 +56,6 @@ const chartroutes = require("./routes/AA_routes/admin_dashboard.route");
 const postRouter = require("./routes/IS_routes/posts");
 const categoryRouter = require("./routes/IS_routes/categories");
 
-const blogRouter = require("./routes/IS_routes/blogs");
-
 //@routes use
 app.use("/course", courseRouter);
 
@@ -66,14 +64,15 @@ app.use("/student", studentRouter);
 app.use("/feedbacks", feedbackRouter);
 app.use("/admin", chartroutes);
 
-app.use("/blog", blogRouter);
-
 app.use("/posts", postRouter);
 app.use("/categories", categoryRouter);
 
 //report generate routes
 const feedbackPDFRoutes = require("./routes/PDF-generator/feedback_report");
 app.use(feedbackPDFRoutes);
+
+const coursePDFRoutes = require("./routes/PDF-generator/course-report");
+app.use(coursePDFRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);
