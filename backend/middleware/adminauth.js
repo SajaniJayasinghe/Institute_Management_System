@@ -6,12 +6,12 @@ const adminauth = async (req, res, next) => {
   try {
     const token = req.header("Authorization");
     const decode = jwt.verify(token, "jwtSecret");
-    const Admin = await admin.findOne({ _id: decode._id, "tokens.token": token });
-    if (!Admin) {
+    const Adm = await admin.findOne({ _id: decode._id, "tokens.token": token });
+    if (!Adm) {
       throw new Error("Please Authenticated");
     }
     req.token = token;
-    req.Admin = Admin;
+    req.Adm = Adm;
     next();
   } catch (error) {
     res.status(401).send({ message: error.message });

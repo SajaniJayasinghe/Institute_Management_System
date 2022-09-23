@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import Footer from '../Layouts/footer';
-import UserNavBar from '../Layouts/UserNavBar';
+import UserNavBar from '../Layouts/AdminNavBar';
 
 
 export default function AdminRegistration(){

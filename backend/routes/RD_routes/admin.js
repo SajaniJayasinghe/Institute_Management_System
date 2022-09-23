@@ -4,7 +4,7 @@ let admin = require("../../models/RD_models/admin");
 const validator= require("validator");
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-const auth = require("../../middleware/adminauth");
+const adminauth = require("../../middleware/adminauth");
 
 //admin signup
 router.post("/adminsignup",async (req, res) => {
@@ -63,7 +63,7 @@ router.post("/adminsignup",async (req, res) => {
 
 
 //get admin profile
-router.get("/adminprofile", auth, async (req, res) => {
+router.get("/adminprofile", adminauth, async (req, res) => {
     try {
       res.status(201)
       res.send({ success: "Admin Logged In", Adm: req.Adm });
@@ -76,7 +76,7 @@ router.get("/adminprofile", auth, async (req, res) => {
 
   
   //log out profile
-  router.post("/adminlogout", auth, async (req, res) => {
+  router.post("/adminlogout", adminauth, async (req, res) => {
     try {
       req.Adm.tokens = req.Adm.tokens.filter((token) => {
         return token.token !== req.token;
@@ -90,7 +90,7 @@ router.get("/adminprofile", auth, async (req, res) => {
  });
 
 // update admin profile
-router.put('/adminupdate', auth, async (req, res) => {
+router.put('/adminupdate', adminauth, async (req, res) => {
     try {
       const {
           adminName,
@@ -124,7 +124,7 @@ router.put('/adminupdate', auth, async (req, res) => {
       });
   
       //delete admin account
-    router.delete("/admindelete", auth, async (req, res) => {
+    router.delete("/admindelete", adminauth, async (req, res) => {
         try {
           const Adm = await admin.findById(req.Adm.id);
           if (!Adm) {
@@ -135,7 +135,7 @@ router.put('/adminupdate', auth, async (req, res) => {
         } catch (error) {
           res
             .status(500)
-            .send({ status: "error with /delete/:id", error: error.message });
+            .send({ status: "error with /admindelete/:id", error: error.message });
         }
       });
 

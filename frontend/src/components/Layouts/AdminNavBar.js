@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from '@material-ui/core/Button';
 
 export default class AdminNavBar extends Component {
     render(){
@@ -13,14 +14,36 @@ export default class AdminNavBar extends Component {
             alt="">
             </img>
       
-       <img
-             style={{marginTop:15,marginRight:15}}
+            <img
+            style={{marginTop:20,marginRight:20}}
             src="https://res.cloudinary.com/nibmsa/image/upload/v1661841580/219983_ckz2ut.png"
-            width="50"
-            height="50"
+            width="60"
+            height="60"
             align="right"
+            type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal"
             className="d-inline-block align-top"
             alt=""/>
+
+<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+                <div class="modal-content" style={{background:"#E9F6FD"}}>
+                   <div class="modal-header">       
+                         
+                   
+             <Button
+                   href='/adminprofile'
+                   style={{ color:"black",background:"#8BC0FF", borderRadius:20 }}
+                   variant="outlined"
+                  
+                 >
+                My Profile
+               </Button>   &nbsp;&nbsp;
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+            </div>
+         </div>
+       </div>
+
    
        <nav class="navbar navbar-expand-lg " style={{ backgroundColor:"#DAE7F8"}} >
        <div class="container">  

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import Footer from '../Layouts/footer';
-import UserNavBar from '../Layouts/UserNavBar';
+import UserNavBar from '../Layouts/AdminNavBar';
 
 export default class AdminLogin extends Component {
     constructor(props){
@@ -31,7 +31,7 @@ export default class AdminLogin extends Component {
           })
           console.log(this.state.token)
           localStorage.setItem("Authorization", res.data.token)
-          window.location = "/coursesdisplay"
+          window.location = "/admindashboard"
           alert('Login Successfull!!');
       })
       .catch((err)=>{

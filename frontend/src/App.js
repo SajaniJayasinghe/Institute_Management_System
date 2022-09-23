@@ -19,7 +19,8 @@ import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfil
 import StudentLogin from './components/RD_Components/StudentLogin';
 import AdminLogin from './components/RD_Components/AdminLogin';
 import AdminRegistration from './components/RD_Components/AdminRegistration';
-
+import AdminUpdateProfile from './components/RD_Components/AdminUpdateProfile';
+import AdminProfile from './components/RD_Components/AdminProfile';
 
 export default class App extends Component {
     render() {
@@ -47,6 +48,9 @@ export default class App extends Component {
              <Route path = "/update" element={<StudentUpdateProfile/>}/>
              <Route path= "/adminsignin" element={<AdminLogin/>}/>
              <Route path= "/adminsignup" element={<AdminRegistration/>}/>
+             <Route path = "/adminupdate" element={<AdminUpdateProfile/>}/>
+             <Route path = "/adminprofile" element={<AdminProfile/>}/>
+
 
 
              {/* Aroshini */}
