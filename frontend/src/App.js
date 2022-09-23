@@ -1,10 +1,8 @@
+
 import React, { Component } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StudentLogin from "./components/RD_Components/StudentLogin";
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import CreateNewCourses from "./components/SS_Components/CreateNewCourses";
 import CourseDetails from "./components/SS_Components/CourseDetails";
 import UpdateCourseDetails from "./components/SS_Components/UpdateCourseDetails";
@@ -22,6 +20,10 @@ import BlogsDisplay from "./components/IS_Components/BlogsDispaly";
 import SpecificBlog from "./components/IS_Components/SpecificBlog";
 import AdminFeedbacks from "./components/AA_Components/Admin_Feedback_Section";
 //import Blogs from "./components/IS_Components/BlogPage";
+import Programs from './components/SS_Components/Programs';
+import AddDocument from './components/SS_Components/AddDocument';
+
+
 export default class App extends Component {
   render() {
     return (
@@ -35,6 +37,9 @@ export default class App extends Component {
           <Route path="/coursesdisplay" element={<CoursesDisplay />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/" element={<HomePage />} />
+          <Route path = "/programs" element={<Programs/>}/>
+          <Route path = "/addDocument/:id" element={<AddDocument/>}/>
+             
 
           {/* Randy */}
           <Route path="/signin" element={<StudentLogin />} />

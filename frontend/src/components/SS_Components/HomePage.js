@@ -174,6 +174,21 @@ export default class HomePage extends Component {
                   </p>
                 </div>
               </div>
+
+         </div>
+
+        <div class="col" style={{width: "20rem"}} > 
+     <div class="shadow h-60" id="cardcol1">
+ <div class="card-body">
+</div>
+ <img
+   src="https://res.cloudinary.com/nibmsa/image/upload/v1662537015/clip-art-study-skills-openclipart-student-macarthur-study-bible-png-favpng-9BxtL6wvLAY2wvtvJquiWW0Gg-removebg-preview_upic7x.png"
+     class="card-img-top"
+        height="300px"
+        width="450px"
+          alt="..." />
+          </div>
+
             </div>
 
             <div class="col" style={{ width: "20rem" }}>

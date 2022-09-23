@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Course from './CoursesPage';
 import Paginat from './paginationComponent';
-import AdminNavBar from '../Layouts/AdminNavBar';
+import NavBar from '../Layouts/Navbar';
 import Footer from "../Layouts/footer";
 
 const CoursesDisplay = () => {
@@ -39,7 +39,9 @@ const CoursesDisplay = () => {
 
  }
      return(
-        <div><AdminNavBar/>   
+        <div>
+         <NavBar/>   
+          <br/>
            <div style={{ backgroundColor:"#fff" ,height:"1000px"}} >
               <div className="container" align="center">
                  <div className="row" style={{ paddingTop: 15 }}>

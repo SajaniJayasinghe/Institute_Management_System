@@ -2,12 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import app from "../../FireBase";
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
+import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
 import Button from "@material-ui/core/Button";
 import Footer from "../Layouts/footer";
 import AdminNavBar from "../Layouts/AdminNavBar";
@@ -20,7 +15,6 @@ export default function UpdateCourseDetails() {
   const [description, setdescription] = useState("");
   const [courseadded_date, setcourseadded_date] = useState("");
   const [course_thumbnail, setcourse_thumbnail] = useState("");
-  const [course_content, setcourse_content] = useState("");
 
   const params = useParams();
   const courseID = params.courseID;
@@ -35,7 +29,7 @@ export default function UpdateCourseDetails() {
         setdescription(res.data.existingCourses.description);
         setcourseadded_date(res.data.existingCourses.courseadded_date);
         setcourse_thumbnail(res.data.existingCourses.course_thumbnail);
-        setcourse_content(res.data.existingCourses.course_content);
+      
       }
       console.log(res.data);
     });
@@ -46,14 +40,14 @@ export default function UpdateCourseDetails() {
 
     const fileName =
       new Date().getTime().toString() +
-      course_thumbnail.name +
-      course_content.name;
+      course_thumbnail.name 
+
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(
       storageRef,
       course_thumbnail,
-      course_content
+  
     );
 
     // Register three observers:
@@ -85,8 +79,8 @@ export default function UpdateCourseDetails() {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then(
-          (course_thumbnail, course_content) => {
-            console.log("File available at", course_thumbnail, course_content);
+          (course_thumbnail) => {
+            console.log("File available at", course_thumbnail);
 
             const updateCourse = {
               course_name,
@@ -96,7 +90,6 @@ export default function UpdateCourseDetails() {
               description,
               courseadded_date,
               course_thumbnail,
-              course_content,
             };
 
             axios
@@ -271,19 +264,9 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => setcourse_thumbnail(e.target.files[0])}
                       />
                     </div>
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <div style={{ minWidth: "165px", maxWidth: "100px" }}>
-                        8. Course Content
-                      </div>
-                      <input
-                        type="file"
-                        class="form-control"
-                        onChange={(e) => setcourse_content(e.target.files[0])}
-                      />{" "}
+                     <br />
                       <br />
-                      <br />
-                      <br />
-                    </div>{" "}
+                    
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <Button
                       variant="contained"

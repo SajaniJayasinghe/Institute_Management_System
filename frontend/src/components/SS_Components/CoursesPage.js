@@ -16,10 +16,11 @@ const Course = ({ courseID, course_name, lecture_name, course_thumbnail }) => {
     setOpen(false);
   };
 
-  return (
-    <div class="card" style={{ background: "white", color: "black" }}>
-      <div style={{ overflow: "hidden", height: 320 }}>
-        <img src={course_thumbnail} width={330} onClick={CourseHome} />
+
+ return (
+  <div class="card"  style={{ background: "white",color:"black",}} >
+      <div style={{overflow: 'hidden', height: 300}}>
+        <img src={course_thumbnail} height={300} width={280} onClick={CourseHome}/>
       </div>
 
       <div
