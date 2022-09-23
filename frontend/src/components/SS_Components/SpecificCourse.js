@@ -35,16 +35,7 @@ export default function SpecificCourse() {
       });
     },[]);
 
-  //   useEffect(() => {
-  //     function getpdf(){
-  //       axios.get(`http://localhost:8070/content/getdocument/${courseID}`).then((res) => {
-  //         setcourse_content(res.data)
-  //         }).catch((error) => {
-  //           console.log(error.message)
-  //      })              
-  // }
-  //     getpdf()
-  // },[])
+
     
   return (
     <div>
