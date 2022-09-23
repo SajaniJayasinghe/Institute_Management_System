@@ -16,7 +16,6 @@ import StudentRegistration from './components/RD_Components/StudentRegistration'
 import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfile';
 import AddDocument from './components/SS_Components/AddDocument';
 
-
 export default class App extends Component {
     render() {
         return (

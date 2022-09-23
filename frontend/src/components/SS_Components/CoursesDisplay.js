@@ -39,7 +39,9 @@ const CoursesDisplay = () => {
 
  }
      return(
-        <div><NavBar/>   
+        <div>
+         <NavBar/>   
+          <br/>
            <div style={{ backgroundColor:"#fff" ,height:"1000px"}} >
               <div className="container" align="center">
                  <div className="row" style={{ paddingTop: 15 }}>
