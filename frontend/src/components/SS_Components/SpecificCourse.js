@@ -4,7 +4,7 @@ import axios from "axios";
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Footer from "../Layouts/footer";
-import AdminNavBar from "../Layouts/AdminNavBar";
+import NavBar from "../Layouts/NavBar";
 
 export default function SpecificCourse() {
     const [course_name,setcourse_name] = useState("");
@@ -35,9 +35,11 @@ export default function SpecificCourse() {
       });
     },[]);
 
+
+    
   return (
     <div>
-      <AdminNavBar/>
+      <NavBar/>
         <div style={{ backgroundColor:"#ffff" ,height:"900px"}} >
            <div align="center" ><br/><br/>
               <Paper style={{textAlign:"center",borderRadius: 5,width:'1000px',height:'700px',backgroundColor:"#E9F6FD"}}>
@@ -47,7 +49,7 @@ export default function SpecificCourse() {
                  <div class="row">
               <div class="col-sm">
 
-                   <div style={{display:"flex",marginLeft:"200px"}}>
+                   <div style={{display:"flex",marginLeft:"150px"}}>
                      <h2><b><u>{course_name}</u></b></h2>
                     </div><br/>
 
@@ -56,11 +58,11 @@ export default function SpecificCourse() {
                     </div><br/>
          
                      <div style={{display:"fleX" ,marginLeft:"50px"}}>
-                       <b>{subtitle}</b>
+                       <b>Subtitle &nbsp; : &nbsp; {subtitle}</b>
                      </div>
 
                      <div style={{display:"fleX" ,marginLeft:"50px"}}>
-                       <b>{lecture_name}</b>
+                       <b>Lecturer : &nbsp;&nbsp;{lecture_name}</b>
                      </div><br/>
 
 

@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
     "material-icons": "^1.11.11",
+    "moment": "^2.29.4",
     "parcel": "^2.7.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
@@ -33,7 +34,6 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-show-more-text": "^1.5.2",
-
     "react-toastify": "^9.0.8",
     "stars-rating": "^1.1.0"
   },

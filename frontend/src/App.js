@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StudentLogin from './components/RD_Components/StudentLogin';
 
-import {BrowserRouter as Router, Routes, Route, } from "react-router-dom";
-
 import CreateNewCourses from './components/SS_Components/CreateNewCourses';
 import CourseDetails from './components/SS_Components/CourseDetails';
 import UpdateCourseDetails from './components/SS_Components/UpdateCourseDetails';
@@ -17,7 +15,6 @@ import StudentProfile from './components/RD_Components/StudentProfile';
 import StudentRegistration from './components/RD_Components/StudentRegistration';
 import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfile';
 import AddDocument from './components/SS_Components/AddDocument';
-
 
 export default class App extends Component {
     render() {
@@ -54,4 +51,4 @@ export default class App extends Component {
 
       )
     }
-    
+  }

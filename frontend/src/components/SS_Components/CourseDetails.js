@@ -8,6 +8,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import IconButton from '@material-ui/core/IconButton';
 import AdminNavBar from '../Layouts/AdminNavBar';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import moment from 'moment';
 
 export default class CourseDetails extends Component {
     constructor(props){
@@ -101,7 +102,7 @@ render() {
                     <td>{courses.course_code}</td>
                     <td>{courses.subtitle}</td>
                     <td>{courses.lecture_name}</td>
-                    <td>{courses.courseadded_date}</td>
+                    <td>{moment(courses.courseadded_date).format("DD/MM/YYYY")}</td>
                     <td>
                       <IconButton aria-label="edit" color="primary" size="small" 
                           href={`/addDocument/${courses._id}`} style={{color: "black",marginLeft:"50px"}}>
