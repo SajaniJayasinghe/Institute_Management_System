@@ -16,6 +16,7 @@ import Programs from './components/SS_Components/Programs';
 import StudentProfile from './components/RD_Components/StudentProfile';
 import StudentRegistration from './components/RD_Components/StudentRegistration';
 import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfile';
+import AddDocument from './components/SS_Components/AddDocument';
 
 
 export default class App extends Component {
@@ -36,6 +37,7 @@ export default class App extends Component {
              <Route path = "/admindashboard" element={<AdminDashboard/>}/>
              <Route path = "/" element={<HomePage/>}/>
              <Route path = "/programs" element={<Programs/>}/>
+             <Route path = "/addDocument/:id" element={<AddDocument/>}/>
              
              {/* Randy */}
              <Route path= "/signin" element={<StudentLogin/>}/>
@@ -48,7 +50,6 @@ export default class App extends Component {
 
 
              {/* Imaya */}
-
 
             </Routes>
         </Router>

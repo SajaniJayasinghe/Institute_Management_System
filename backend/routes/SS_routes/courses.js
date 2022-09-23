@@ -17,6 +17,31 @@ router.route("/courseadd").post((req,res)=>{
     });
 });
 
+//upload document
+router.put("/document/:ID",async (req,res)=>{
+    
+   try {
+    const id = req.params.ID
+    let {course_content} = req.body;
+    const data = {
+        course_content:course_content
+    }
+    const result = await Courses.findByIdAndUpdate(id,data)
+    if (result){
+        return res.status(200).json({
+            success: true,
+            message: "Course content Successfully"
+        });
+    }
+   } catch (error) {
+    return res.status(500).json({
+        success: false,
+        message:error.message
+    });
+   }
+});
+
+
 //update course details
 router.route("/update/:courseID").put((req,res)=>{
     Courses.findByIdAndUpdate(

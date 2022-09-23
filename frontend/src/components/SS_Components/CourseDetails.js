@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import DescriptionIcon from '@mui/icons-material/Description';
 import IconButton from '@material-ui/core/IconButton';
 import AdminNavBar from '../Layouts/AdminNavBar';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 export default class CourseDetails extends Component {
     constructor(props){
@@ -87,6 +88,7 @@ render() {
                   <th ><font color="#fff">Subtitle</font></th>
                   <th ><font color="#fff">Lecture Name</font></th>
                   <th ><font color="#fff">Courseadded Date</font></th>   
+                  <th ><font color="#fff">Add Document</font></th>
                   <th ><font color="#fff">Action</font></th>
                 </tr>
               </thead>
@@ -101,10 +103,17 @@ render() {
                     <td>{courses.lecture_name}</td>
                     <td>{courses.courseadded_date}</td>
                     <td>
+                      <IconButton aria-label="edit" color="primary" size="small" 
+                          href={`/addDocument/${courses._id}`} style={{color: "black",marginLeft:"50px"}}>
+                         <ControlPointIcon fontSize="small"  style={{color: "black"}} />
+                      </IconButton> 
+
+                    </td>
+                    <td>
                       <IconButton aria-label="edit" color="primary" size="small"
                            href={`/update/${courses._id}`}>
                          <EditIcon fontSize="small"  style={{color: "black"}} />
-                      </IconButton> &nbsp;&nbsp;&nbsp;&nbsp;
+                      </IconButton> &nbsp;&nbsp;
 
                       <IconButton aria-label="delete" size="small">
                          <DeleteForeverIcon fontSize="small" onClick={()=>this.onDelete(courses._id)}  style={{color: "black"}}/>

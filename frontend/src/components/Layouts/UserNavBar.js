@@ -46,7 +46,7 @@ export default class UserNavBar extends Component {
                </Button>   &nbsp;&nbsp;
  
                <Button
-                   href='/signin'
+                   href='/coursesdisplay'
                    style={{ color:"black",  background:"#D9D9D9" }}
                    variant="outlined"
                    startIcon={<AccountCircleIcon />}

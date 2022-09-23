@@ -14,9 +14,8 @@ export default function SpecificCourse() {
     const [description, setdescription] = useState("");
     const [courseadded_date, setcourseadded_date] = useState("");
     const [course_thumbnail, setcourse_thumbnail] = useState("");
-    const [course_content, setcourse_content]  = useState("");
+    const [course_content, setcourse_content]  = useState([{setcourse_code:""}]);
 
-   
     const params = useParams();
     const courseID= params.courseID;
 
@@ -36,7 +35,17 @@ export default function SpecificCourse() {
       });
     },[]);
 
-
+  //   useEffect(() => {
+  //     function getpdf(){
+  //       axios.get(`http://localhost:8070/content/getdocument/${courseID}`).then((res) => {
+  //         setcourse_content(res.data)
+  //         }).catch((error) => {
+  //           console.log(error.message)
+  //      })              
+  // }
+  //     getpdf()
+  // },[])
+    
   return (
     <div>
       <AdminNavBar/>
@@ -64,18 +73,12 @@ export default function SpecificCourse() {
                      <div style={{display:"fleX" ,marginLeft:"50px"}}>
                        <b>{lecture_name}</b>
                      </div><br/>
-                 
-                  {/* {course_content.map((doc)=>{
-                     <div style={{marginTop:"10px"}}>
-                     <Button variant="contained" className="w-10" 
-                       style={{background: "#8BC0FF",marginLeft:"170px", width: 30+"%",color:"BLACK",borderRadius: 20,}}
-                       disableElevation  href={doc.course_content} download>Download
-                    </Button></div>
-                  })}   */}
+
 
                      <Button variant="contained" className="w-10" 
                        style={{background: "#8BC0FF",marginLeft:"170px", width: 30+"%",color:"BLACK",borderRadius: 20,}}
-                       disableElevation download>Download
+                       onClick={()=>window.open(course_content)}
+                       disableElevation >Download
                       </Button>
 
                  </div>
