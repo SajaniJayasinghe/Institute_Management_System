@@ -43,7 +43,7 @@ const Feedback = ({
   courseID,
   studentId,
   studentName,
-  profilePicture,
+  studentPicture,
   rating,
   comment,
 }) => {
@@ -97,14 +97,14 @@ const Feedback = ({
   };
 
   return (
-    <div className="pb-2 pr-2">
+    <div className="pb-2 pr-2" align="center">
       <Paper style={{ padding: 10, borderRadius: 8 }} variant="outlined">
         <ul className="aa" style={{ display: "flex" }}>
           <label>
             <li>
               <Avatar
                 alt="Remy Sharp"
-                src={profilePicture}
+                src={studentPicture}
                 style={{ width: 50, height: 50 }}
               />
             </li>

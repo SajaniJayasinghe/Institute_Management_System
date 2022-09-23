@@ -33,19 +33,18 @@ connection.once("open", () => {
 });
 
 const storage = multer.diskStorage({
-    destination:(req,file,cb) => {
-        cb(null,"images");
-    },
-    filename:(req,file,cb) => {
-        cb(null,req.body.name)
-    },
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
+  },
 });
 
-const upload = multer({ storage: storage});
-app.post("/uplaod", upload.single("file"), (req,res) => {
-    res.status(200).json("File has been uplaoded");
+const upload = multer({ storage: storage });
+app.post("/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File has been uploaded");
 });
-
 
 // @import routes
 const courseRouter = require("./routes/SS_routes/courses");
@@ -53,8 +52,11 @@ const courseRouter = require("./routes/SS_routes/courses");
 const studentRouter = require("./routes/RD_routes/student");
 
 const feedbackRouter = require("./routes/AA_routes/feedbacks");
+const chartroutes = require("./routes/AA_routes/admin_dashboard.route");
 const postRouter = require("./routes/IS_routes/posts");
 const categoryRouter = require("./routes/IS_routes/categories");
+
+const blogRouter = require("./routes/IS_routes/blogs");
 
 //@routes use
 app.use("/course", courseRouter);
@@ -62,11 +64,16 @@ app.use("/course", courseRouter);
 app.use("/student", studentRouter);
 
 app.use("/feedbacks", feedbackRouter);
+app.use("/admin", chartroutes);
 
-app.use("/student", studentRouter);
+app.use("/blog", blogRouter);
 
-app.use("/posts",postRouter );
-app.use("/categories",categoryRouter );
+app.use("/posts", postRouter);
+app.use("/categories", categoryRouter);
+
+//report generate routes
+const feedbackPDFRoutes = require("./routes/PDF-generator/feedback_report");
+app.use(feedbackPDFRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);
