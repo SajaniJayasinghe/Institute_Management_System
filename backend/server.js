@@ -52,6 +52,7 @@ const courseRouter = require("./routes/SS_routes/courses");
 
 const studentRouter = require("./routes/RD_routes/student");
 const adminRouter = require("./routes/RD_routes/admin");
+const usersremoveRoutes = require("./routes/RD_routes/usersremove");
 
 
 
@@ -64,6 +65,8 @@ app.use("/course", courseRouter);
 
 app.use("/student", studentRouter);
 app.use("/admin", adminRouter);
+app.use("/usersremove",usersremoveRoutes);
+
 
 app.use("/feedback", feedbackRouter);
 

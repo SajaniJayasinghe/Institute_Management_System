@@ -97,7 +97,7 @@ if (loading) {
    
 return (
     <div>
-   <NavBar/>
+   <AdminNavBar/>
         <br/><br/> <br/><br/> <br/><br/>
          <div class="container">
           <div class="main-bod" >

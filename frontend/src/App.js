@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 
-import {BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+// import {BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 import CreateNewCourses from './components/SS_Components/CreateNewCourses';
 import CourseDetails from './components/SS_Components/CourseDetails';
@@ -21,6 +21,7 @@ import AdminLogin from './components/RD_Components/AdminLogin';
 import AdminRegistration from './components/RD_Components/AdminRegistration';
 import AdminUpdateProfile from './components/RD_Components/AdminUpdateProfile';
 import AdminProfile from './components/RD_Components/AdminProfile';
+import Studentsremove from './components/RD_Components/studentsremove';
 
 export default class App extends Component {
     render() {
@@ -50,6 +51,7 @@ export default class App extends Component {
              <Route path= "/adminsignup" element={<AdminRegistration/>}/>
              <Route path = "/adminupdate" element={<AdminUpdateProfile/>}/>
              <Route path = "/adminprofile" element={<AdminProfile/>}/>
+             <Route path = "/getstudent" element={<Studentsremove/>}/>
 
 
 

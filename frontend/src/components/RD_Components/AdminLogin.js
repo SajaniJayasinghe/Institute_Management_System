@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import Footer from '../Layouts/footer';
-import UserNavBar from '../Layouts/AdminNavBar';
+import AdminNavBar from '../Layouts/AdminNavBar';
 
 export default class AdminLogin extends Component {
     constructor(props){
@@ -51,7 +51,7 @@ export default class AdminLogin extends Component {
     render() {
     return (
         <div>
-        <UserNavBar/><br/><br/>
+        <AdminNavBar/><br/><br/>
            <div class="row d-flex align-items-center justify-content-center">
               <div style={{width: 800, background: "#E8F2FF",height:500,borderRadius:"20px"}}>
                  <div class="card-body" > 

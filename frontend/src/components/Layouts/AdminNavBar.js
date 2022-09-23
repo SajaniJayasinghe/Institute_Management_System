@@ -67,7 +67,7 @@ export default class AdminNavBar extends Component {
         </li> 
 
         <li class="nav-item">
-          <a class="nav-link" href="#" style={{color: "black" ,fontFamily:"times new roman", fontSize:20,marginLeft:40,marginRight:50}}><b>Students</b></a>
+          <a class="nav-link" href="/getstudent" style={{color: "black" ,fontFamily:"times new roman", fontSize:20,marginLeft:40,marginRight:50}}><b>Students</b></a>
         </li> 
 
         <li class="nav-item">
