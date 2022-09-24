@@ -1,9 +1,10 @@
 import React, { useState, useCallback } from "react";
-
 import axios from "axios";
 import app from "../../FireBase";
 import "./createBlogs.css";
 import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
+import NavBar from "../Layouts/Navbar";
+import Footer from "../Layouts/footer";
 
 export default function CreateBlogs(){
   const [title, setTitle] = useState("");
@@ -92,6 +93,8 @@ export default function CreateBlogs(){
   };
 
   return (
+    <div>
+      <NavBar/>
     <div className="write">
        {photo && (
         <img className="writeImg" src={ photo}  alt="" />
@@ -128,7 +131,8 @@ export default function CreateBlogs(){
           </button>
         </form>
       </div>
-   
+      <Footer/>
+      </div>
   );
 };
 

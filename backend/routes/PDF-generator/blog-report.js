@@ -7,7 +7,7 @@ router.use(cors());
 const fs = require("fs");
 const PDFDocument = require("./pdfkit-tables");
 
-router.post("/generatecoursereport", async function (req, res, next) {
+router.post("/generateblogsreport", async function (req, res, next) {
   //load cuurent time
   var currentDate = new Date();
   var date = currentDate.getDate();
@@ -15,8 +15,8 @@ router.post("/generatecoursereport", async function (req, res, next) {
   var year = currentDate.getFullYear();
   var datestamp = "DATE:- " + year + "-" + (month + 1) + "-" + date;
 
-  const CourseRequest = req.body.courses;
-  console.log(CourseRequest);
+  const BlogsRequest = req.body.blogs;
+  console.log(BlogsRequest);
 
   // Create The PDF document
   var myDoc = new PDFDocument({ bufferPages: true });
@@ -38,7 +38,7 @@ router.post("/generatecoursereport", async function (req, res, next) {
   myDoc
     .fillColor("#444444")
     .fontSize(20)
-    .text("Courses Details", 110, 57)
+    .text("Blogs Details", 110, 57)
     .fontSize(10)
     .text("UML INSTITUTE", 200, 50, { align: "right" })
     .text("New Kandy Road ,Malabe", 200, 65, { align: "right" })
@@ -49,23 +49,15 @@ router.post("/generatecoursereport", async function (req, res, next) {
 
   // Create the table - https://www.andronio.me/2017/09/02/pdfkit-tables/
   const table = {
-    headers: [
-      "Course Name",
-      "Course Code",
-      "Subtitle",
-      "Lecture Name",
-      "Courseadded Date",
-    ],
+    headers: ["Student ID", "Student Name", "title"],
     rows: [],
   };
 
-  for (const CourseItem of CourseRequest) {
+  for (const BlogsItem of BlogsRequest) {
     table.rows.push([
-      CourseItem.course_name,
-      CourseItem.course_code,
-      CourseItem.subtitle,
-      CourseItem.lecture_name,
-      CourseItem.courseadded_date,
+      BlogsItem.studentId,
+      BlogsItem.studentName,
+      BlogsItem.title,
     ]);
   }
   // Draw the table

@@ -36,7 +36,7 @@ export default class AdminDashboard extends Component {
 
               <div class="col">
                 <div class="shadow h-60" id="cardcol1">
-                  <a href="/">
+                  <a href="/getblog">
                     <img
                       src="https://res.cloudinary.com/nibmsa/image/upload/v1661859711/Blog_wl0lab.jpg"
                       class="card-img-top"

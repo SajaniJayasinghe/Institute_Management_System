@@ -48,8 +48,7 @@ export default class CourseDetails extends Component {
   filterData(courses, searchKey) {
     const result = courses.filter(
       (courses) =>
-        courses.course_name.toLowerCase().includes(searchKey) ||
-        courses.course_code.toLowerCase().includes(searchKey)
+        courses.course_name.toLowerCase().includes(searchKey)
     );
 
     this.setState({ courses: result });
@@ -123,7 +122,7 @@ export default class CourseDetails extends Component {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Search Course Name or Course Code "
+                placeholder="Search Course Name "
                 onChange={this.handleSearchArea}
               />{" "}
               <br />

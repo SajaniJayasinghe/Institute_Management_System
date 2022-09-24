@@ -121,7 +121,7 @@ export default class NavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="#"
+                    href="/readblogs"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",

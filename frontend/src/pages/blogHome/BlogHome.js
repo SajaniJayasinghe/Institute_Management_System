@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/IS_Components/header/Header";
 import Posts from "../../components/IS_Components/posts/Posts";
-
 import "./BlogHome.css";
 import axios from "axios";
 import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
+import Footer from "../../components/Layouts/footer";
+import NavBar from "../../components/Layouts/Navbar";
+import Footer from "../../components/Layouts/footer";
 
 export default function BlogHome() {
   const [posts, setPosts] = useState([]);
@@ -23,35 +24,35 @@ export default function BlogHome() {
     fetchPosts();
   }, [search]);
 
-  
-  
-
-
   return (
     <>
-      <Header /><br/>
-<Link to = {`/addblogs`} >
-  <Button  variant="contained"
-                     
-                      className="w-8"
-                      style={{
-                        background: "#8BC0FF",
-                        width: 15 + "%",
-                        color: "BLACK",
-                        borderRadius: 10,
-                       
-                      }}
-                      disableElevation
-                      type="submit" >CREATE BLOG</Button>
-</Link><br/>
-
-      
-
+      <NavBar />
+      <Header />
+      <br /> <br />
+      <Button
+        variant="contained"
+        className="w-8"
+        href="/addblogs"
+        style={{
+          marginLeft: "1200px",
+          background: "#8BC0FF",
+          width: 10 + "%",
+          color: "BLACK",
+          borderRadius: 10,
+        }}
+        disableElevation
+        type="submit"
+      >
+        CREATE BLOG
+      </Button>
+      <br />
+      <br /> <br />
       <div className="home">
-     
-        <Posts posts={posts} />
-       
+        <div style={{ marginLeft: "60px" }}>
+          <Posts posts={posts} />
+        </div>
       </div>
+      <Footer />
     </>
   );
 }
