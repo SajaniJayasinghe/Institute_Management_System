@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StudentLogin from './components/RD_Components/StudentLogin';
 
-import {BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
 
 import CreateNewCourses from './components/SS_Components/CreateNewCourses';
 import CourseDetails from './components/SS_Components/CourseDetails';
@@ -18,8 +19,15 @@ import StudentRegistration from './components/RD_Components/StudentRegistration'
 import StudentUpdateProfile from './components/RD_Components/StudentUpdateProfile';
 
 
+ import Single from './pages/singleblog/Single';
+ import BlogHome from './pages/blogHome/BlogHome';
+ import CreateBlogs from "./components/IS_Components/createBlogs";
+
+
 export default class App extends Component {
+  
     render() {
+     
         return (
           <Router>
             <Routes>
@@ -48,7 +56,10 @@ export default class App extends Component {
 
 
              {/* Imaya */}
-
+           
+          <Route path="/readblogs" element={<BlogHome />} /> 
+          <Route path="/addblogs" element={<CreateBlogs />} />
+          <Route path="/:blogID" element={<Single />} />
 
             </Routes>
         </Router>
