@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StudentLogin from "./components/RD_Components/StudentLogin";
 import CreateNewCourses from "./components/SS_Components/CreateNewCourses";
@@ -16,6 +15,10 @@ import AdminFeedbacks from "./components/AA_Components/Admin_Feedback_Section";
 import Programs from "./components/SS_Components/Programs";
 import AddDocument from "./components/SS_Components/AddDocument";
 import Feedbacks from "./components/AA_Components/feedbacks.component";
+import Single from './pages/singleblog/Single';
+import BlogHome from './pages/blogHome/BlogHome';
+import CreateBlogs from "./components/IS_Components/createBlogs";
+
 
 export default class App extends Component {
   render() {
@@ -38,6 +41,7 @@ export default class App extends Component {
           <Route path="/profile" element={<StudentProfile />} />
           <Route path="/signup" element={<StudentRegistration />} />
           <Route path="/update" element={<StudentUpdateProfile />} />
+            
 
           {/* Aroshini */}
           <Route path="/specific/:courseID" element={<Feedbacks />} />
@@ -46,6 +50,10 @@ export default class App extends Component {
           <Route path="/feedback" element={<AdminFeedbacks />} />
 
           {/* Imaya */}
+          <Route path="/readblogs" element={<BlogHome />} /> 
+          <Route path="/addblogs" element={<CreateBlogs />} />
+          <Route path="/:blogID" element={<Single />} />
+
         </Routes>
       </Router>
     );
