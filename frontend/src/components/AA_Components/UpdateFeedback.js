@@ -63,7 +63,7 @@ const UpdateFeedback = ({
             id="contained-modal-title-vcenter"
             className="text-color"
           >
-            Change My Feedback
+            Edit Feedback
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -90,14 +90,26 @@ const UpdateFeedback = ({
               {comment}
             </textArea>
             <br />
+
+            {/* <Button
+                variant="contained"
+                className="w-10"
+                style={{
+                  background: "rgb(139, 192, 255)",
+                  width: 50 + "%",
+                  borderRadius: "20px",
+                }}
+                startIcon={<CommentIcon />}
+                disableElevation
+                type="submit"
+                onClick={updateFeedback}
+              >
+                Update
+              </Button> */}
             <Button
               variant="contained"
               className="w-10"
-              style={{
-                background: "rgb(139, 192, 255)",
-                width: 50 + "%",
-                borderRadius: "20px",
-              }}
+              style={{ background: "rgb(139, 192, 255)", width: 100 + "%" }}
               startIcon={<CommentIcon />}
               disableElevation
               type="submit"

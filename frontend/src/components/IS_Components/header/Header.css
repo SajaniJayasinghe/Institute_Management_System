@@ -1,0 +1,11 @@
+.header {
+    margin-top: 30px;
+  }
+  
+  .headerImg{
+    margin-left: 70px;
+    border-radius: 30px;
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+}

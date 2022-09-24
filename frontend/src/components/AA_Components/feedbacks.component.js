@@ -35,8 +35,10 @@ const Feedbacks = (courseID) => {
 
   useEffect(() => {
     setFilterComments(
-      feedback.filter((feedback) =>
-        feedback.comment.toLowerCase().includes(search.toLowerCase())
+      feedback.filter(
+        (feedback) =>
+          feedback.comment.toLowerCase().includes(search.toLowerCase()) ||
+          feedback.studentName.toLowerCase().includes(search.toLowerCase())
       )
     );
   }, [search, feedback]);
@@ -57,7 +59,7 @@ const Feedbacks = (courseID) => {
       <div className="col-lg-10 col-sm-12 col-md-8 col-xs-12 product-col">
         <CreateFeedback courseID={courseID} />
         <hr />
-        {/* <Ratings ratings={ratings} courseID={courseID} /> */}
+        <Ratings ratings={ratings} courseID={courseID} />
         <h3 className="pb-3 text-color">Reviews</h3>
         <div class="input-group mb-3">
           <input
@@ -83,7 +85,7 @@ const Feedbacks = (courseID) => {
                 courseID={courseID.courseID}
                 studentId={feedback.studentId}
                 studentName={feedback.studentName}
-                profilePicture={feedback.userPicture}
+                studentPicture={feedback.studentPicture}
                 rating={feedback.rating}
                 comment={feedback.comment}
               />
