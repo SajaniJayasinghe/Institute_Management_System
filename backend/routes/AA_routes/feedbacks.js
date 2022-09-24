@@ -6,8 +6,8 @@ const Student = require("../../models/RD_models/student");
 
 const router = express.Router();
 
-router.post("/add/:courseId", auth, async (req, res) => {
-  let courseId = req.params.courseId;
+router.post("/add/:courseID", auth, async (req, res) => {
+  let courseID = req.params.courseID;
   let { rating, comment } = req.body;
   let date = new Date();
 
@@ -17,15 +17,15 @@ router.post("/add/:courseId", auth, async (req, res) => {
       throw new Error("There is no student");
     }
 
-    const course = await Courses.findById(courseId);
+    const course = await Courses.findById(courseID);
     if (!course) {
       throw new Error("There is no course");
     }
 
     let feedback = {
-      courseId: courseId,
+      courseID: courseID,
       studentId: req.Stu._id,
-      //   userPicture: req.Stu.imageUrl,
+      studentPicture: req.Stu.imageUrl,
       studentName: req.Stu.studentName,
       rating: rating,
       comment: comment,
@@ -35,7 +35,7 @@ router.post("/add/:courseId", auth, async (req, res) => {
     const newFeedback = new Feedback(feedback);
 
     await newFeedback.save().then(async () => {
-      let feedbackCollection = await Feedback.find({ courseId: courseId });
+      let feedbackCollection = await Feedback.find({ courseID: courseID });
       let number = 0;
       let feedbackCount = feedbackCollection.length;
       let totalRating = 0;
@@ -48,7 +48,7 @@ router.post("/add/:courseId", auth, async (req, res) => {
         let averageRating = Math.round(average * 10) / 10;
         console.log(averageRating);
         await Courses.findOneAndUpdate(
-          { _id: courseId },
+          { _id: courseID },
           { averageRating: averageRating }
         );
       } else {
@@ -56,7 +56,7 @@ router.post("/add/:courseId", auth, async (req, res) => {
         let averageRating = Math.round(average * 10) / 10;
         console.log(averageRating);
         await Courses.findOneAndUpdate(
-          { _id: courseId },
+          { _id: courseID },
           { averageRating: averageRating }
         );
       }
@@ -73,8 +73,8 @@ router.post("/add/:courseId", auth, async (req, res) => {
 // @url           GET /feedback/read/:id
 // @description   display all feedbacks of a course
 // @Action        public
-router.get("/read/:courseId", async (req, res) => {
-  const courseId = req.params.courseId;
+router.get("/read/:courseID", async (req, res) => {
+  const courseID = req.params.courseID;
 
   try {
     let number = 0;
@@ -88,12 +88,12 @@ router.get("/read/:courseId", async (req, res) => {
       fourAndHalf = 0;
     let five = 0;
     // validate course
-    const course = await Courses.findById(courseId);
+    const course = await Courses.findById(courseID);
     if (!course) {
       throw new Error("There is no course");
     }
 
-    const feedbacks = await Feedback.find({ courseId: courseId });
+    const feedbacks = await Feedback.find({ courseID: courseID });
 
     for (number; number < feedbacks.length; number++) {
       switch (feedbacks[number].rating) {
@@ -151,8 +151,8 @@ router.get("/read/:courseId", async (req, res) => {
 // @url           PUT /feedback/update/:id
 // @description   update feedback details by id
 // @Action        private
-router.put("/update/:courseId/:feedbackID", auth, async (req, res) => {
-  const courseId = req.params.courseId;
+router.put("/update/:courseID/:feedbackID", auth, async (req, res) => {
+  const courseID = req.params.courseID;
   const feedbackID = req.params.feedbackID;
   const { rating, comment } = req.body;
 
@@ -162,7 +162,7 @@ router.put("/update/:courseId/:feedbackID", auth, async (req, res) => {
       throw new Error("There is no user");
     }
 
-    const course = await Courses.findById(courseId);
+    const course = await Courses.findById(courseID);
     if (!course) {
       throw new Error("There is no course");
     }
@@ -171,7 +171,7 @@ router.put("/update/:courseId/:feedbackID", auth, async (req, res) => {
       { _id: feedbackID },
       { rating: rating, comment: comment }
     ).then(async () => {
-      let feedbackCollection = await Feedback.find({ courseId: courseId });
+      let feedbackCollection = await Feedback.find({ courseID: courseID });
       let number = 0;
       let feedbackCount = feedbackCollection.length;
       let totalRating = 0;
@@ -184,7 +184,7 @@ router.put("/update/:courseId/:feedbackID", auth, async (req, res) => {
         let averageRating = Math.round(average * 10) / 10;
         console.log(averageRating);
         await Courses.findOneAndUpdate(
-          { _id: courseId },
+          { _id: courseID },
           { averageRating: averageRating }
         );
       } else {
@@ -192,7 +192,7 @@ router.put("/update/:courseId/:feedbackID", auth, async (req, res) => {
         let averageRating = Math.round(average * 10) / 10;
         console.log(averageRating);
         await Courses.findOneAndUpdate(
-          { _id: courseId },
+          { _id: courseID },
           { averageRating: averageRating }
         );
       }
@@ -207,11 +207,11 @@ router.put("/update/:courseId/:feedbackID", auth, async (req, res) => {
   }
 });
 
-// @url           DELETE /feedback/delete/:courseId/:feedbackId
+// @url           DELETE /feedback/delete/:courseID/:feedbackID
 // @description   delete feedback details by id
 // @Action        private
-router.delete("/delete/:courseId/:feedbackID", auth, async (req, res) => {
-  const courseId = req.params.courseId;
+router.delete("/delete/:courseID/:feedbackID", auth, async (req, res) => {
+  const courseID = req.params.courseID;
   const feedbackID = req.params.feedbackID;
 
   try {
@@ -220,7 +220,7 @@ router.delete("/delete/:courseId/:feedbackID", auth, async (req, res) => {
       throw new Error("There is no student");
     }
 
-    const course = await Courses.findById(courseId);
+    const course = await Courses.findById(courseID);
     if (!course) {
       throw new Error("There is no course");
     }
@@ -232,7 +232,7 @@ router.delete("/delete/:courseId/:feedbackID", auth, async (req, res) => {
 
     const deleteFeedback = await Feedback.findByIdAndDelete(feedbackID).then(
       async () => {
-        let feedbackCollection = await Feedback.find({ courseId: courseId });
+        let feedbackCollection = await Feedback.find({ courseID: courseID });
         let number = 0;
         let feedbackCount = feedbackCollection.length;
         let totalRating = 0;
@@ -245,7 +245,7 @@ router.delete("/delete/:courseId/:feedbackID", auth, async (req, res) => {
           let averageRating = Math.round(average * 10) / 10;
           console.log(averageRating);
           await Courses.findOneAndUpdate(
-            { _id: courseId },
+            { _id: courseID },
             { averageRating: averageRating }
           );
         } else {
@@ -253,7 +253,7 @@ router.delete("/delete/:courseId/:feedbackID", auth, async (req, res) => {
           let averageRating = Math.round(average * 10) / 10;
           console.log(averageRating);
           await Courses.findOneAndUpdate(
-            { _id: courseId },
+            { _id: courseID },
             { averageRating: averageRating }
           );
         }

@@ -1,20 +1,24 @@
 const mongoose = require("mongoose");
 
 const feedbackSchema = new mongoose.Schema({
-  courseId: {
+  courseID: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "courses",
   },
+  course_name: {
+    type: String,
+    required: false,
+  },
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    required: false,
     ref: "student",
   },
-  //   studentPicture: {
-  //     type: String,
-  //     required: true,
-  //   },
+  studentPicture: {
+    type: String,
+    required: false,
+  },
   studentName: {
     type: String,
     required: true,
