@@ -99,7 +99,22 @@ export default class NavBar extends Component {
                     <b>Programs</b>
                   </a>
                 </li>
-
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="/coursesdisplay"
+                    style={{
+                      color: "black",
+                      fontFamily: "times new roman",
+                      fontSize: 20,
+                      marginLeft: 40,
+                      marginRight: 50,
+                    }}
+                  >
+                    <b>Courses</b>
+                  </a>
+                </li>
                 <li class="nav-item">
                   <a
                     class="nav-link"
