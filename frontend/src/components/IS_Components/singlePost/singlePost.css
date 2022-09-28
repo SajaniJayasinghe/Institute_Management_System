@@ -18,10 +18,12 @@
   }
   
   .singlePostTitle {
+    
     text-align: center;
-    margin: 10px;
+    margin: 50px;
     font-family: "Lora", serif;
-    font-size: 28px;
+    font-size: 38px;
+    font-weight: 300;
   }
   
   .singlePostTitleInput {
@@ -39,6 +41,7 @@
   }
   
   .singlePostEdit {
+    margin-right: 30px;
     float: right;
     font-size: 16px;
   }
@@ -66,6 +69,9 @@
   }
   
   .singlePostDesc {
+    text-align: justify;
+    margin-right: 50px;
+    margin-left: 50px;
     color: #666;
     font-size: 18px;
     line-height: 25px;
@@ -97,4 +103,13 @@
     cursor: pointer;
     align-self: flex-end;
     margin-top: 20px;
+  }
+  .singlePostAuthor{
+    margin-left: 50px;
+    font-size: 20px;
+  }
+
+  .singlePostDate{
+    margin-right: 50px;
+    font-size: 20px;
   }

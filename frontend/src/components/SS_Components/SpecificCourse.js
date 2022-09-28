@@ -41,7 +41,7 @@ export default function SpecificCourse() {
   return (
     <div>
       <NavBar />
-      <div style={{ backgroundColor: "#ffff", height: "900px" }}>
+      <div style={{ backgroundColor: "#ffff", minHeight: "900px" }}>
         <div align="center">
           <br />
           <br />
