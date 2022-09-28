@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import app from "../../FireBase";
-import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
 import Button from "@material-ui/core/Button";
 import Footer from "../Layouts/footer";
 import AdminNavBar from "../Layouts/AdminNavBar";
@@ -29,7 +34,6 @@ export default function UpdateCourseDetails() {
         setdescription(res.data.existingCourses.description);
         setcourseadded_date(res.data.existingCourses.courseadded_date);
         setcourse_thumbnail(res.data.existingCourses.course_thumbnail);
-      
       }
       console.log(res.data);
     });
@@ -38,17 +42,11 @@ export default function UpdateCourseDetails() {
   const onUpdate = (e) => {
     e.preventDefault();
 
-    const fileName =
-      new Date().getTime().toString() +
-      course_thumbnail.name 
+    const fileName = new Date().getTime().toString() + course_thumbnail.name;
 
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
-    const uploadTask = uploadBytesResumable(
-      storageRef,
-      course_thumbnail,
-  
-    );
+    const uploadTask = uploadBytesResumable(storageRef, course_thumbnail);
 
     // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
@@ -78,35 +76,33 @@ export default function UpdateCourseDetails() {
       () => {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-        getDownloadURL(uploadTask.snapshot.ref).then(
-          (course_thumbnail) => {
-            console.log("File available at", course_thumbnail);
+        getDownloadURL(uploadTask.snapshot.ref).then((course_thumbnail) => {
+          console.log("File available at", course_thumbnail);
 
-            const updateCourse = {
-              course_name,
-              course_code,
-              subtitle,
-              lecture_name,
-              description,
-              courseadded_date,
-              course_thumbnail,
-            };
+          const updateCourse = {
+            course_name,
+            course_code,
+            subtitle,
+            lecture_name,
+            description,
+            courseadded_date,
+            course_thumbnail,
+          };
 
-            axios
-              .put(
-                `http://localhost:8070/course/update/${courseID}`,
-                updateCourse
-              )
-              .then((res) => {
-                if (res.data) {
-                  alert("Update Successfully....!");
-                  window.location.href = "/courseDetails";
-                } else {
-                  alert("Update Unsuccessfelly...!");
-                }
-              });
-          }
-        );
+          axios
+            .put(
+              `http://localhost:8070/course/update/${courseID}`,
+              updateCourse
+            )
+            .then((res) => {
+              if (res.data) {
+                alert("Update Successfully....!");
+                window.location.href = "/courseDetails";
+              } else {
+                alert("Update Unsuccessfelly...!");
+              }
+            });
+        });
       }
     );
   };
@@ -264,9 +260,8 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => setcourse_thumbnail(e.target.files[0])}
                       />
                     </div>
-                     <br />
-                      <br />
-                    
+                    <br />
+                    <br />
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <Button
                       variant="contained"

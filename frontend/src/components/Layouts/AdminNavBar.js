@@ -85,7 +85,7 @@ export default class AdminNavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="#"
+                    href="/getblog"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
