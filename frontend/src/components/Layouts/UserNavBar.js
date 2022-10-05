@@ -53,6 +53,14 @@ export default class UserNavBar extends Component {
                 ></button>
               </div>
 
+
+             <div class="modal-body" align="right">
+             <Button
+                   href='/adminsignin'
+                   style={{ color:"black",background:"#D9D9D9" }}
+                   variant="outlined"
+                   startIcon={<AccountCircleIcon />}
+                 >
               <div class="modal-body" align="right">
                 <Button
                   href="/admindashboard"
@@ -60,6 +68,7 @@ export default class UserNavBar extends Component {
                   variant="outlined"
                   startIcon={<AccountCircleIcon />}
                 >
+
                   Admin
                 </Button>{" "}
                 &nbsp;&nbsp;

@@ -19,12 +19,18 @@ import Single from "./pages/singleblog/Single";
 import BlogHome from "./pages/blogHome/BlogHome";
 import CreateBlogs from "./components/IS_Components/createBlogs";
 import GetBlogDetails from "./components/IS_Components/getBlogDetails";
+import AdminLogin from './components/RD_Components/AdminLogin';
+import AdminRegistration from './components/RD_Components/AdminRegistration';
+import AdminUpdateProfile from './components/RD_Components/AdminUpdateProfile';
+import AdminProfile from './components/RD_Components/AdminProfile';
+import Studentsremove from './components/RD_Components/studentsremove';
 
 export default class App extends Component {
   render() {
     return (
       <Router>
         <Routes>
+      
           {/* Sajani */}
           <Route path="/createCourse" element={<CreateNewCourses />} exact />
           <Route path="/courseDetails" element={<CourseDetails />} />
@@ -36,16 +42,19 @@ export default class App extends Component {
           <Route path="/programs" element={<Programs />} />
           <Route path="/addDocument/:id" element={<AddDocument />} />
 
-          {/* Randy */}
+          {/* Randima */}
           <Route path="/signin" element={<StudentLogin />} />
           <Route path="/profile" element={<StudentProfile />} />
           <Route path="/signup" element={<StudentRegistration />} />
           <Route path="/update" element={<StudentUpdateProfile />} />
+          <Route path= "/adminsignin" element={<AdminLogin/>}/>
+          <Route path= "/adminsignup" element={<AdminRegistration/>}/>
+          <Route path = "/adminupdate" element={<AdminUpdateProfile/>}/>
+          <Route path = "/adminprofile" element={<AdminProfile/>}/>
+          <Route path = "/getstudent" element={<Studentsremove/>}/>
 
           {/* Aroshini */}
           <Route path="/specific/:courseID" element={<Feedbacks />} />
-
-          {/* Admin(Aroshini) */}
           <Route path="/feedback" element={<AdminFeedbacks />} />
 
           {/* Imaya */}
