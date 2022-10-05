@@ -1,0 +1,115 @@
+.singlePost {
+    flex: 9;
+  }
+  
+  .singlePostWrapper {
+    padding: 20px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .singlePostImg {
+    width: 90%;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    align-self: center;
+  }
+  
+  .singlePostTitle {
+    
+    text-align: center;
+    margin: 50px;
+    font-family: "Lora", serif;
+    font-size: 38px;
+    font-weight: 300;
+  }
+  
+  .singlePostTitleInput {
+    margin: 10px;
+    font-family: "Lora", serif;
+    font-size: 28px;
+    text-align: center;
+    border: none;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .singlePostTitleInput:focus {
+    outline: none;
+  }
+  
+  .singlePostEdit {
+    margin-right: 30px;
+    float: right;
+    font-size: 16px;
+  }
+  
+  .singlePostIcon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .singlePostIcon:first-child {
+    color: teal;
+  }
+  
+  .singlePostIcon:last-child {
+    color: tomato;
+  }
+  
+  .singlePostInfo {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: "Varela Round", sans-serif;
+    color: #b39656;
+  }
+  
+  .singlePostDesc {
+    text-align: justify;
+    margin-right: 50px;
+    margin-left: 50px;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  .singlePostDesc::first-letter {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  
+  .singlePostDescInput {
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  .singlePostDescInput:focus {
+    outline: none;
+  }
+  .singlePostButton {
+    width: 100px;
+    border: none;
+    background-color: teal;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
+  }
+  .singlePostAuthor{
+    margin-left: 50px;
+    font-size: 20px;
+  }
+
+  .singlePostDate{
+    margin-right: 50px;
+    font-size: 20px;
+  }

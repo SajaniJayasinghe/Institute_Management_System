@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import app from "../../FireBase";
-// import {getDownloadURL,getStorage,ref,uploadBytesResumable, } from "firebase/storage";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
 import Button from "@material-ui/core/Button";
 import AdminNavBar from "../Layouts/AdminNavBar";
 import Footer from "../Layouts/footer";
@@ -14,22 +19,14 @@ export default function CreateNewCourses() {
   const [description, setdescription] = useState("");
   const [courseadded_date, setcourseadded_date] = useState("");
   const [course_thumbnail, setcourse_thumbnail] = useState("");
-  const [course_content, setcourse_content] = useState("");
 
   const sendData = async (e) => {
     e.preventDefault();
 
-    const fileName =
-      new Date().getTime().toString() +
-      course_thumbnail.name +
-      course_content.name;
+    const fileName = new Date().getTime().toString() + course_thumbnail.name;
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
-    const uploadTask = uploadBytesResumable(
-      storageRef,
-      course_thumbnail,
-      course_content
-    );
+    const uploadTask = uploadBytesResumable(storageRef, course_thumbnail);
 
     // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
@@ -58,34 +55,31 @@ export default function CreateNewCourses() {
       () => {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-        getDownloadURL(uploadTask.snapshot.ref).then(
-          (course_thumbnail, course_content) => {
-            console.log("File available at", course_thumbnail, course_content);
+        getDownloadURL(uploadTask.snapshot.ref).then((course_thumbnail) => {
+          console.log("File available at", course_thumbnail);
 
-            let data = {
-              course_name: course_name,
-              course_code: course_code,
-              subtitle: subtitle,
-              lecture_name: lecture_name,
-              description: description,
-              courseadded_date: courseadded_date,
-              course_thumbnail: course_thumbnail,
-              course_content: course_content,
-            };
+          let data = {
+            course_name: course_name,
+            course_code: course_code,
+            subtitle: subtitle,
+            lecture_name: lecture_name,
+            description: description,
+            courseadded_date: courseadded_date,
+            course_thumbnail: course_thumbnail,
+          };
 
-            axios
-              .post("http://localhost:8070/course/courseadd", data)
-              .then(() => {
-                alert("Course Added Successfully");
-                window.location.href = "/courseDetails";
+          axios
+            .post("http://localhost:8070/course/courseadd", data)
+            .then(() => {
+              alert("Course Added Successfully");
+              window.location.href = "/courseDetails";
 
-                console.log(data);
-              })
-              .catch((err) => {
-                alert(err);
-              });
-          }
-        );
+              console.log(data);
+            })
+            .catch((err) => {
+              alert(err);
+            });
+        });
       }
     );
   };
@@ -238,16 +232,6 @@ export default function CreateNewCourses() {
                       />
                     </div>
                     <br />
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <div style={{ minWidth: "165px", maxWidth: "100px" }}>
-                        8. Course Content
-                      </div>
-                      <input
-                        type="file"
-                        class="form-control"
-                        onChange={(e) => setcourse_content(e.target.files[0])}
-                      />
-                    </div>{" "}
                     <br />
                     <Button
                       variant="contained"

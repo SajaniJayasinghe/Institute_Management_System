@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const app = express();
 const multer = require("multer");
 require("dotenv").config();
+const path = require("path");
 
 //app middleware
 app.use(bodyParser.json());
@@ -32,47 +33,33 @@ connection.once("open", () => {
   console.log("Mongodb connection success!!!");
 });
 
-const storage = multer.diskStorage({
-    destination:(req,file,cb) => {
-        cb(null,"images");
-    },
-    filename:(req,file,cb) => {
-        cb(null,req.body.name)
-    },
-});
-
-const upload = multer({ storage: storage});
-app.post("/uplaod", upload.single("file"), (req,res) => {
-    res.status(200).json("File has been uplaoded");
-});
-
-
 // @import routes
 const courseRouter = require("./routes/SS_routes/courses");
-
 const studentRouter = require("./routes/RD_routes/student");
 const adminRouter = require("./routes/RD_routes/admin");
 const usersremoveRoutes = require("./routes/RD_routes/usersremove");
-
-
-
 const feedbackRouter = require("./routes/AA_routes/feedbacks");
-const postRouter = require("./routes/IS_routes/posts");
-const categoryRouter = require("./routes/IS_routes/categories");
+const postRouter = require("./routes/IS_routes/blogs");
+const chartroutes = require("./routes/AA_routes/admin_dashboard.route");
 
 //@routes use
 app.use("/course", courseRouter);
-
 app.use("/student", studentRouter);
 app.use("/admin", adminRouter);
 app.use("/usersremove",usersremoveRoutes);
+app.use("/feedbacks", feedbackRouter);
+app.use("/admin", chartroutes);
+app.use("/blog", postRouter);
 
+//report generate routes
+const feedbackPDFRoutes = require("./routes/PDF-generator/feedback_report");
+app.use(feedbackPDFRoutes);
 
-app.use("/feedback", feedbackRouter);
+const coursePDFRoutes = require("./routes/PDF-generator/course-report");
+app.use(coursePDFRoutes);
 
-app.use("/student",studentRouter);
-app.use("/posts",postRouter );
-app.use("/categories",categoryRouter );
+const blogPDFRoutes = require("./routes/PDF-generator/blog-report");
+app.use(blogPDFRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);
