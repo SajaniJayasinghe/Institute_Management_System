@@ -53,22 +53,13 @@ export default class UserNavBar extends Component {
                 ></button>
               </div>
 
-
-             <div class="modal-body" align="right">
-             <Button
-                   href='/adminsignin'
-                   style={{ color:"black",background:"#D9D9D9" }}
-                   variant="outlined"
-                   startIcon={<AccountCircleIcon />}
-                 >
               <div class="modal-body" align="right">
                 <Button
-                  href="/admindashboard"
+                  href="/adminsignin"
                   style={{ color: "black", background: "#D9D9D9" }}
                   variant="outlined"
                   startIcon={<AccountCircleIcon />}
                 >
-
                   Admin
                 </Button>{" "}
                 &nbsp;&nbsp;
@@ -87,7 +78,7 @@ export default class UserNavBar extends Component {
 
         <nav
           class="navbar navbar-expand-lg "
-          style={{ backgroundColor: "#DAE7F8" }}
+          style={{ backgroundColor: "#DAE7F8"}}
         >
           <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -101,7 +92,7 @@ export default class UserNavBar extends Component {
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 50,
+                      marginLeft:110,
                       marginRight: 50,
                     }}
                   >
@@ -113,16 +104,16 @@ export default class UserNavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="/programs"
+                    href="/courses"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
-                    <b>Programs</b>
+                    <b>Courses</b>
                   </a>
                 </li>
 
@@ -135,7 +126,7 @@ export default class UserNavBar extends Component {
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
@@ -152,7 +143,7 @@ export default class UserNavBar extends Component {
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
@@ -163,16 +154,16 @@ export default class UserNavBar extends Component {
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="#"
+                    href="/aboutus"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
-                    <b>Students</b>
+                    <b>About Us</b>
                   </a>
                 </li>
 
@@ -184,11 +175,11 @@ export default class UserNavBar extends Component {
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
-                    <b>Emails</b>
+                    <b>Contact </b>
                   </a>
                 </li>
               </ul>

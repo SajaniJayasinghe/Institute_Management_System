@@ -61,6 +61,9 @@ app.use(coursePDFRoutes);
 const blogPDFRoutes = require("./routes/PDF-generator/blog-report");
 app.use(blogPDFRoutes);
 
+const studentPDFRoutes = require("./routes/PDF-generator/studentList-report");
+app.use(studentPDFRoutes);
+
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);
 });

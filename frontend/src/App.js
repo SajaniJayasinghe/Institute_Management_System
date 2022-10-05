@@ -19,18 +19,19 @@ import Single from "./pages/singleblog/Single";
 import BlogHome from "./pages/blogHome/BlogHome";
 import CreateBlogs from "./components/IS_Components/createBlogs";
 import GetBlogDetails from "./components/IS_Components/getBlogDetails";
-import AdminLogin from './components/RD_Components/AdminLogin';
-import AdminRegistration from './components/RD_Components/AdminRegistration';
-import AdminUpdateProfile from './components/RD_Components/AdminUpdateProfile';
-import AdminProfile from './components/RD_Components/AdminProfile';
-import Studentsremove from './components/RD_Components/studentsremove';
-
+import AdminLogin from "./components/RD_Components/AdminLogin";
+import AdminRegistration from "./components/RD_Components/AdminRegistration";
+import AdminUpdateProfile from "./components/RD_Components/AdminUpdateProfile";
+import AdminProfile from "./components/RD_Components/AdminProfile";
+import Studentsremove from "./components/RD_Components/studentsremove";
+import Aboutus from "./components/SS_Components/Aboutus";
+import HowToWork from "./components/SS_Components/HowToWork";
+import Courses from "./components/SS_Components/Userside-Courses";
 export default class App extends Component {
   render() {
     return (
       <Router>
         <Routes>
-      
           {/* Sajani */}
           <Route path="/createCourse" element={<CreateNewCourses />} exact />
           <Route path="/courseDetails" element={<CourseDetails />} />
@@ -41,17 +42,20 @@ export default class App extends Component {
           <Route path="/" element={<HomePage />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/addDocument/:id" element={<AddDocument />} />
+          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/howtowork" element={<HowToWork />} />
+          <Route path="/courses" element={<Courses />} />
 
           {/* Randima */}
           <Route path="/signin" element={<StudentLogin />} />
           <Route path="/profile" element={<StudentProfile />} />
           <Route path="/signup" element={<StudentRegistration />} />
           <Route path="/update" element={<StudentUpdateProfile />} />
-          <Route path= "/adminsignin" element={<AdminLogin/>}/>
-          <Route path= "/adminsignup" element={<AdminRegistration/>}/>
-          <Route path = "/adminupdate" element={<AdminUpdateProfile/>}/>
-          <Route path = "/adminprofile" element={<AdminProfile/>}/>
-          <Route path = "/getstudent" element={<Studentsremove/>}/>
+          <Route path="/adminsignin" element={<AdminLogin />} />
+          <Route path="/adminsignup" element={<AdminRegistration />} />
+          <Route path="/adminupdate" element={<AdminUpdateProfile />} />
+          <Route path="/adminprofile" element={<AdminProfile />} />
+          <Route path="/getstudent" element={<Studentsremove />} />
 
           {/* Aroshini */}
           <Route path="/specific/:courseID" element={<Feedbacks />} />
