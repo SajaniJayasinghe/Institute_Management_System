@@ -36,6 +36,8 @@ connection.once("open", () => {
 // @import routes
 const courseRouter = require("./routes/SS_routes/courses");
 const studentRouter = require("./routes/RD_routes/student");
+const adminRouter = require("./routes/RD_routes/admin");
+const usersremoveRoutes = require("./routes/RD_routes/usersremove");
 const feedbackRouter = require("./routes/AA_routes/feedbacks");
 const postRouter = require("./routes/IS_routes/blogs");
 const chartroutes = require("./routes/AA_routes/admin_dashboard.route");
@@ -43,6 +45,8 @@ const chartroutes = require("./routes/AA_routes/admin_dashboard.route");
 //@routes use
 app.use("/course", courseRouter);
 app.use("/student", studentRouter);
+app.use("/admin", adminRouter);
+app.use("/usersremove",usersremoveRoutes);
 app.use("/feedbacks", feedbackRouter);
 app.use("/admin", chartroutes);
 app.use("/blog", postRouter);
@@ -56,6 +60,9 @@ app.use(coursePDFRoutes);
 
 const blogPDFRoutes = require("./routes/PDF-generator/blog-report");
 app.use(blogPDFRoutes);
+
+const studentPDFRoutes = require("./routes/PDF-generator/studentList-report");
+app.use(studentPDFRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`);

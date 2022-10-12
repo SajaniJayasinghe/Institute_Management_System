@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
 
 export default class AdminNavBar extends Component {
   render() {
@@ -13,15 +14,52 @@ export default class AdminNavBar extends Component {
           alt=""
         ></img>
 
-        <img
-          style={{ marginTop: 15, marginRight: 15 }}
+<img
+          style={{ marginTop: 20, marginRight: 20 }}
           src="https://res.cloudinary.com/nibmsa/image/upload/v1661841580/219983_ckz2ut.png"
-          width="50"
-          height="50"
+          width="60"
+          height="60"
           align="right"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
           className="d-inline-block align-top"
-          alt="/profile"
+          alt=""
         />
+
+
+<div
+          class="modal fade"
+          id="exampleModal"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content" style={{ background: "#E9F6FD" }}>
+              <div class="modal-header">
+                <Button
+                  href="/adminprofile"
+                  style={{
+                    color: "black",
+                    background: "#8BC0FF",
+                    borderRadius: 20,
+                  }}
+                  variant="outlined"
+                >
+                  My Profile
+                </Button>{" "}
+                &nbsp;&nbsp;
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <nav
           class="navbar navbar-expand-lg "
@@ -51,7 +89,7 @@ export default class AdminNavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="/programs"
+                    href="/courseDetails"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
@@ -60,7 +98,7 @@ export default class AdminNavBar extends Component {
                       marginRight: 50,
                     }}
                   >
-                    <b>Programs</b>
+                    <b>Courses</b>
                   </a>
                 </li>
 
@@ -101,7 +139,7 @@ export default class AdminNavBar extends Component {
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="#"
+                    href="/getstudent"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
@@ -117,7 +155,7 @@ export default class AdminNavBar extends Component {
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="#"
+                    href="/feedback"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
@@ -133,7 +171,7 @@ export default class AdminNavBar extends Component {
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="#"
+                    href="https://mail.google.com/"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
