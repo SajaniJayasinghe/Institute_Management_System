@@ -39,9 +39,9 @@ export default class App extends Component {
           <Route path="/courseDetails" element={<CourseDetails />} />
           <Route path="/update/:courseID" element={<UpdateCourseDetails />} />
           <Route path="/specific/:courseID" element={<SpecificCourse />} />
-          <Route path="/" element={<CoursesDisplay />} />
+          <Route path="/coursesdisplay" element={<CoursesDisplay />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
-          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/addDocument/:id" element={<AddDocument />} />
           <Route path="/aboutus" element={<Aboutus />} />
