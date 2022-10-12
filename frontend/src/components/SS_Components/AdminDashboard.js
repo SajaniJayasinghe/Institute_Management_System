@@ -17,7 +17,7 @@ export default class AdminDashboard extends Component {
             >
               <div class="col">
                 <div class="shadow h-60" id="cardcol1">
-                  <a href="/">
+                  <a href="#">
                     <img
                       src="https://res.cloudinary.com/nibmsa/image/upload/v1661858520/Resources_fdiab6.png"
                       class="card-img-top"
@@ -105,7 +105,7 @@ export default class AdminDashboard extends Component {
 
               <div class="col">
                 <div class="shadow h-60" id="cardcol1">
-                  <a href="/">
+                  <a href="/getstudent">
                     <img
                       src="https://res.cloudinary.com/nibmsa/image/upload/v1661860165/shutterstock_234318064_lg5ecb.webp"
                       class="card-img-top"
@@ -124,7 +124,7 @@ export default class AdminDashboard extends Component {
 
               <div class="col">
                 <div class="shadow h-60" id="cardcol1">
-                  <a href="/advertisement">
+                  <a href="https://mail.google.com/">
                     <img
                       src="https://res.cloudinary.com/nibmsa/image/upload/v1661860299/email-logo_elzs8p.jpg"
                       class="card-img-top"

@@ -70,12 +70,12 @@ export default class NavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="/"
+                    href="/coursesdisplay"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 50,
+                      marginLeft: 100,
                       marginRight: 50,
                     }}
                   >
@@ -92,7 +92,7 @@ export default class NavBar extends Component {
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
@@ -103,28 +103,12 @@ export default class NavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="/coursesdisplay"
+                    href="https://www.coursera.org/?irclickid=z5lQ0KztYxyNUTlwSBRZ803HUkDQSGRp7XFO0E0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3030402&utm_content=b2c"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
-                      marginRight: 50,
-                    }}
-                  >
-                    <b>Courses</b>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    aria-current="page"
-                    href="#"
-                    style={{
-                      color: "black",
-                      fontFamily: "times new roman",
-                      fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
@@ -141,7 +125,7 @@ export default class NavBar extends Component {
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
@@ -152,28 +136,28 @@ export default class NavBar extends Component {
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="#"
+                    href="/howtowork"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >
-                    <b>Students</b>
+                    <b>How to Work</b>
                   </a>
                 </li>
 
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="#"
+                    href="https://mail.google.com/"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",
                       fontSize: 20,
-                      marginLeft: 40,
+                      marginLeft: 50,
                       marginRight: 50,
                     }}
                   >

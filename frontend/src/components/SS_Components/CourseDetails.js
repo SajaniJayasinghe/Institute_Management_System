@@ -63,6 +63,7 @@ export default class CourseDetails extends Component {
     });
   };
 
+  //generate report
   async generateReport() {
     const obj = { courses: this.state.courses };
     await axios

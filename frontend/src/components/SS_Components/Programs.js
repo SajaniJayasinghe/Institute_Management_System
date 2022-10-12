@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import UserNavBar from "../Layouts/UserNavBar";
+import NavBar from "../Layouts/Navbar";
 
 export default class Programs extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ export default class Programs extends Component {
   render() {
     return (
       <div>
-        <UserNavBar />
+        <NavBar />
         <div className="container">
           <br />
           <br />
