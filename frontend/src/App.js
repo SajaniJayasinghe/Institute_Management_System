@@ -27,6 +27,8 @@ import Studentsremove from "./components/RD_Components/studentsremove";
 import Aboutus from "./components/SS_Components/Aboutus";
 import HowToWork from "./components/SS_Components/HowToWork";
 import Courses from "./components/SS_Components/Userside-Courses";
+
+
 export default class App extends Component {
   render() {
     return (
@@ -37,9 +39,9 @@ export default class App extends Component {
           <Route path="/courseDetails" element={<CourseDetails />} />
           <Route path="/update/:courseID" element={<UpdateCourseDetails />} />
           <Route path="/specific/:courseID" element={<SpecificCourse />} />
-          <Route path="/coursesdisplay" element={<CoursesDisplay />} />
+          <Route path="/" element={<CoursesDisplay />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/programs" element={<Programs />} />
           <Route path="/addDocument/:id" element={<AddDocument />} />
           <Route path="/aboutus" element={<Aboutus />} />
