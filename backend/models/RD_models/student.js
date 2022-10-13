@@ -83,4 +83,4 @@ studentSchema.statics.findByCredentials = async (email, pwd) => {
     };
 
  const student = mongoose.model("student", studentSchema);
- module.exports = student;  
+ module.exports = student; 

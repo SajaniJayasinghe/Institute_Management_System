@@ -6,7 +6,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import ChatIcon from "@material-ui/icons/Chat";
 // import Ratings from "./ratings.component";
 
-const CreateFeedback = (courseId) => {
+const CreateFeedback = (courseID) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState(null);
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ const CreateFeedback = (courseId) => {
 
   const OnFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(courseId.courseId.courseId);
+    console.log(courseID.courseID.courseID);
 
     if (rating === 0) {
       console.log("this is in check function");
@@ -44,21 +44,22 @@ const CreateFeedback = (courseId) => {
         "content-type": "application/json",
       },
     };
-
-    axios
-      .post(
-        `http://localhost:8070/feedback/add/${courseId.courseId.courseId}`,
-        feedback,
-        config
-      )
-      .then((res) => {
-        console.log("data send to database");
-        window.location.reload();
-      })
-      .catch((error) => {
-        alert("Please Register To the Application");
-        console.log(error.message);
-      });
+    console.log("auth"),
+      axios
+        .post(
+          `http://localhost:8070/feedbacks/add/${courseID.courseID.courseID}`,
+          feedback,
+          // console.log("auth"),
+          config
+        )
+        .then((res) => {
+          console.log("data send to database");
+          window.location.reload();
+        })
+        .catch((error) => {
+          alert("Please Register To the Application");
+          console.log(error.message);
+        });
   };
 
   return (
@@ -95,9 +96,9 @@ const CreateFeedback = (courseId) => {
                 variant="contained"
                 className="w-10"
                 style={{
-                  background: "#08368b",
-                  width: 100 + "%",
-                  color: "white",
+                  background: "rgb(139, 192, 255)",
+                  width: 50 + "%",
+                  borderRadius: "20px",
                 }}
                 startIcon={<ChatIcon />}
                 disableElevation
