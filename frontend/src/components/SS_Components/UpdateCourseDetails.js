@@ -14,7 +14,7 @@ import AdminNavBar from "../Layouts/AdminNavBar";
 
 export default function UpdateCourseDetails() {
   const [course_name, setcourse_name] = useState("");
-  const [course_code, setcourses_code] = useState("");
+  const [course_code, setcourse_code] = useState("");
   const [subtitle, setsubtitle] = useState("");
   const [lecture_name, setlecture_name] = useState("");
   const [description, setdescription] = useState("");
@@ -159,6 +159,7 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => {
                           setcourse_name(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -176,6 +177,7 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => {
                           setcourse_code(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -193,6 +195,7 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => {
                           setsubtitle(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -210,6 +213,7 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => {
                           setlecture_name(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -227,6 +231,7 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => {
                           setdescription(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -245,6 +250,7 @@ export default function UpdateCourseDetails() {
                         onChange={(e) => {
                           setcourseadded_date(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -258,6 +264,7 @@ export default function UpdateCourseDetails() {
                         type="file"
                         class="form-control"
                         onChange={(e) => setcourse_thumbnail(e.target.files[0])}
+                        required
                       />
                     </div>
                     <br />

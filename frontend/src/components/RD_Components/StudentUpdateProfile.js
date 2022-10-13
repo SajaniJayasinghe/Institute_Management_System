@@ -83,11 +83,6 @@ const UpdateProfile = ({
 
                 <div className="form-group">
                   <small className="text-muted">Chnage Your Email</small>
-
-              <input readOnly type="text" className="form-control"  Value={email}
-            onChange={(e) => setEmail(e.target.value)} required/>
-        </div>
-
                   <input
                     type="email"
                     className="form-control"
@@ -97,15 +92,8 @@ const UpdateProfile = ({
                   />
                 </div>
 
-
                 <div className="form-group">
                   <small className="text-muted">Chnage Your NIC</small>
-
-              <input type="text" className="form-control"  Value={NIC}
-            onChange={(e) => setNIC(e.target.value)} required/>
-        </div>
-
-
                   <input
                     type="NIC"
                     className="form-control"
@@ -114,7 +102,6 @@ const UpdateProfile = ({
                     required
                   />
                 </div>
-
 
                 <div className="col-sm-6">
                   <small className="text-muted">Change Phone Number</small>

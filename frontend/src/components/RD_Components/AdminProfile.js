@@ -106,7 +106,7 @@ return (
                 <div class="cardd" >
                   <div class="cardd-body" >
                     <div class="d-flex flex-column align-items-center text-center" >
-                        <img src="https://dl.memuplay.com/new_market/img/com.vicman.newprofilepic.icon.2022-06-07-21-33-07.png"  class="rounded-circle" width="200" height="200"/>
+                        <img src="https://www.citypng.com/public/uploads/small/11640168385jtmh7kpmvna5ddyynoxsjy5leb1nmpvqooaavkrjmt9zs7vtvuqi4lcwofkzsaejalxn7ggpim4hkg0wbwtzsrp1ldijzbdbsj5z.png"  class="rounded-circle" width="200" height="200"/>
                       <div class="mt-3">
                         <h2><b>{adminName}</b></h2>
                       </div>
