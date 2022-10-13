@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AdminUpdateProfile from './AdminUpdateProfile';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import NavBar from '../Layouts/AdminNavBar';
+import AdminNavBar from '../Layouts/AdminNavBar';
 import Footer from "../Layouts/footer";
 
 
