@@ -146,6 +146,7 @@ export default function CreateNewCourses() {
                       </div>
                       <input
                         type="text"
+                        pattern="^[a-zA-Z0-9]*$"
                         class="form-control"
                         name="course_code"
                         placeholder="Enter course code"

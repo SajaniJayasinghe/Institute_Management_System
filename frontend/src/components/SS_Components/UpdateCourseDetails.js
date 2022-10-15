@@ -170,6 +170,7 @@ export default function UpdateCourseDetails() {
                       </div>
                       <input
                         type="text"
+                        pattern="^[a-zA-Z0-9]*$"
                         class="form-control"
                         value={course_code}
                         name="course_code"

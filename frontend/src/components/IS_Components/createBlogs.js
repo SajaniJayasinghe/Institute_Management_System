@@ -81,7 +81,7 @@ export default function CreateBlogs(){
               .then((res) => {
                 console.log("data send to database");
                 alert("Blog created successfully...");
-                window.location.reload();
+              window.location="/readblogs"
               })
               .catch((error) => {
                 alert("Please Register To the Application");
