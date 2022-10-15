@@ -181,7 +181,8 @@ const StudentProfile = () => {
                       <center>
                         <button
                           onClick={updateUserProfile}
-                          class="btn btn-warning "
+                          class="btn btn "
+                          style={{background: "#4863A0", color:"#ffff"}}
                           href=""
                           target="__blank"
                         >
@@ -189,7 +190,7 @@ const StudentProfile = () => {
                         </button>
                         &nbsp;&nbsp;&nbsp;
                         <button
-                          style={{ background: "#151B54", color: "#ffff" }}
+                          style={{background: "#4863A0", color:"#ffff"}}
                           onClick={studentLogout}
                           class="btn btn "
                           target="__blank"
@@ -198,7 +199,7 @@ const StudentProfile = () => {
                         </button>
                         &nbsp;&nbsp;&nbsp;
                         <button
-                          style={{ background: "#9F000F", color: "#ffff" }}
+                          style={{background: "#4863A0", color:"#ffff"}}
                           onClick={deleteAccount}
                           class="btn btn "
                           target="__blank"

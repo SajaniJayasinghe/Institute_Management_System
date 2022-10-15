@@ -106,7 +106,7 @@ export default class AdminNavBar extends Component {
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="#"
+                    href="https://www.coursera.org/?irclickid=z5lQ0KztYxyNUTlwSBRZ803HUkDQSGRp7XFO0E0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=3030402&utm_content=b2c"
                     style={{
                       color: "black",
                       fontFamily: "times new roman",

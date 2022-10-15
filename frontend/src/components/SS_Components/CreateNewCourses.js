@@ -135,6 +135,7 @@ export default function CreateNewCourses() {
                         onChange={(e) => {
                           setcourse_name(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -145,12 +146,14 @@ export default function CreateNewCourses() {
                       </div>
                       <input
                         type="text"
+                        pattern="^[a-zA-Z0-9]*$"
                         class="form-control"
                         name="course_code"
                         placeholder="Enter course code"
                         onChange={(e) => {
                           setcourse_code(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -167,6 +170,7 @@ export default function CreateNewCourses() {
                         onChange={(e) => {
                           setsubtitle(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -183,6 +187,7 @@ export default function CreateNewCourses() {
                         onChange={(e) => {
                           setlecture_name(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -199,6 +204,7 @@ export default function CreateNewCourses() {
                         onChange={(e) => {
                           setdescription(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -216,6 +222,7 @@ export default function CreateNewCourses() {
                         onChange={(e) => {
                           setcourseadded_date(e.target.value);
                         }}
+                        required
                       />
                       <br />
                       <br />
@@ -229,6 +236,7 @@ export default function CreateNewCourses() {
                         type="file"
                         class="form-control"
                         onChange={(e) => setcourse_thumbnail(e.target.files[0])}
+                        required
                       />
                     </div>
                     <br />
