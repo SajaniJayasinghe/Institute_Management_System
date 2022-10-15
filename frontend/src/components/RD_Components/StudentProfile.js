@@ -180,9 +180,9 @@ const StudentProfile = () => {
                       <br />
                       <center>
                         <button
-                          onClick={updateUserProfile}
-                          class="btn btn "
                           style={{background: "#4863A0", color:"#ffff"}}
+                          onClick={updateUserProfile}
+                          class="btn btn"
                           href=""
                           target="__blank"
                         >
@@ -190,7 +190,7 @@ const StudentProfile = () => {
                         </button>
                         &nbsp;&nbsp;&nbsp;
                         <button
-                          style={{background: "#4863A0", color:"#ffff"}}
+                         style={{background: "#4863A0", color:"#ffff"}}
                           onClick={studentLogout}
                           class="btn btn "
                           target="__blank"

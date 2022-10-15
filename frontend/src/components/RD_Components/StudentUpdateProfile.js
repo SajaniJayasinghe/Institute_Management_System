@@ -83,7 +83,7 @@ const UpdateProfile = ({
 
                 <div className="form-group">
                   <small className="text-muted">Chnage Your Email</small>
-                  <input
+                  <input readOnly
                     type="email"
                     className="form-control"
                     Value={email}
