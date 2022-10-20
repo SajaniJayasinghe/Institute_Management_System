@@ -4,27 +4,13 @@ Project Name :- Institute Management System
 
 --------- Group Details -------------------------
 
-Member 01 : 
-    Name : Rajapaksha I.S
-    Student ID :- IT20103118
-    UserName :- Imaya Rajapaksha
-    
-Member 02 : 
-    Name : Jayasinghe S.S
-    Student ID :- IT20117696
-    UserName :-  Sajani Jayasinghe
-    
-Member 03 : 
-    Name :  Gunarathna W.R.D
-    Student ID :- IT20130770
-    UserName :- Randima Dilshani
-    
-Member 04 : 
-    Name : Dissanayake D.M.A.A
-    Student ID :- IT20104108
-    UserName :- aroshini-dissanayake
-
-
+|       | Name | Student ID | Username |
+|--|--|--|
+| Member 01 | Rajapaksha I.S | IT20103118 | Imaya Rajapaksha     |
+| Member 02 | Jayasinghe S.S | IT20117696 | Sajani Jayasinghe    |
+| Member 03 | Gunarathna W.R.D | IT20130770 | Randima Dilshani     |
+| Member 04 | Dissanayake D.M.A.A | IT20104108 | aroshini-dissanayake |		
+		
 ---------- Project Description ------------------
 
 # Institute_Management_System
