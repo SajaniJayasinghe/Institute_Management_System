@@ -4,7 +4,7 @@ Project Name :- Institute Management System
 
 --------- Group Details -------------------------
 
-No     Name	              Student ID                Username
+ No -     Name	           -   Student ID           -    Username
      
 01)  Rajapaksha I.S 	  -   IT20103118	 -    Imaya Rajapaksha 
 02)  Jayasinghe S.S	  -   IT20117696	 -    Sajani Jayasinghe
