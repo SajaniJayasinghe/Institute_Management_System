@@ -97,15 +97,11 @@ router.put('/adminupdate', adminauth, async (req, res) => {
           email,
           phone,
           NIC,
-          
         } = req.body;
-  
       let Adm = await admin.findOne({email})
-        
       if (!Adm) {
           throw new Error('There is no admin account')
         }
-  
         const adminUpdate = await admin.findByIdAndUpdate(req.Adm.id, 
           {
             adminName:adminName,
@@ -113,10 +109,8 @@ router.put('/adminupdate', adminauth, async (req, res) => {
             phone:phone,
             NIC: NIC
             
-          })
-  
+          }) 
           res.status(200).send({status: 'Admin Profile Updated', Adm: adminUpdate})
-  
         } catch (error) {
           res.status(500).send({error: error.message})
           console.log(error)
